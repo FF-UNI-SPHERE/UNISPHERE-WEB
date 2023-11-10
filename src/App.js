@@ -1,21 +1,19 @@
 import './App.css';
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import logoRoot from "../src/resource/unisphere_logo.png";
+import chRoot from "../src/resource/character_unisphere.png";
 
-class App extends React.Component {
-  render() {
-    return <Container></Container>;
-  }
+function App() {
+  return (
+    <div className='App'>
+      <div>
+        <img id="logo" src={logoRoot} alt="logo"/>
+      </div>
+      <div>
+        <img id="character" src={chRoot} alt="ch"/>
+      </div>
+    </div>
+  );
 }
-
-const Container = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: './resource/main_background.png';
-  background-size: cover;
-`;
 
 export default App;

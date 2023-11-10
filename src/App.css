@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+div #logo {
+  top: 50%;
+  left: 25%;
+  width: 855;
+  height: 153;
+  position: absolute;
+}
+/* 위치 수정 please */
+div #character {
+  width: 154;
+  height: 241;
+  left: 38%;
+  /* top: 300%;  */
+  position: absolute;
+}
