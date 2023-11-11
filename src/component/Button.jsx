@@ -5,7 +5,7 @@ function Button({ children }) {
 }
 
 const StyledButton = styled.button`
-  margin: 5px;
+  margin: 12px;
   width: 250px;
   height: 80px;
   border: none;
