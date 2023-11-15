@@ -2,6 +2,7 @@
   /* color variable */
   --light-gray : #686868;
   --white: #fff;
+  --black: #000;
 }
 
 body {
@@ -16,6 +17,7 @@ body {
   height: auto;
   background-image: url('./resource/main_background.png');
   background-size: cover;
+
 }
 
 code {
