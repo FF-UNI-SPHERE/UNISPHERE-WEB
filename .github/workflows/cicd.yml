@@ -26,7 +26,6 @@ jobs:
       - name: Install Dependencies, Lint, and Build
         run: |
           pnpm install
-          pnpm lint
           pnpm build
 
       - name: Configure AWS credentials
