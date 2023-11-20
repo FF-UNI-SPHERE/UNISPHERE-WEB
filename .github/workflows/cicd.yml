@@ -17,7 +17,7 @@ jobs:
       - name: Set up Node.js and pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: latest
       - uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -25,6 +25,7 @@ jobs:
 
       - name: Install Dependencies, Lint, and Build
         run: |
+          pnpm update --latest
           pnpm install
           pnpm build
 
