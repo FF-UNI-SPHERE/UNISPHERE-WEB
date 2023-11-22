@@ -39,8 +39,9 @@ function LoginTemplate () {
                         &nbsp; 구글 로그인
                     </SocialLoginButton>
                 </ButtonContainer >
-                <HorizontalLine position="bottom"/>
-                <SignInButton >회원가입하기</SignInButton >
+                <HorizontalLine position="top"/>
+                {/* <HorizontalLine position="bottom"/>
+                <SignInButton >회원가입하기</SignInButton > */}
             </WhiteBox >
         </div>
     );
@@ -118,24 +119,25 @@ const SocialButtonIcon = styled.img`
     margin-right: 27%;
 `;
 
-const SignInButton  = styled.button`
-    margin-left: auto;
-    margin-right: auto;
+//사이트 자체 로그인 지원 안하므로 삭제됨
+// const SignInButton  = styled.button`
+//     margin-left: auto;
+//     margin-right: auto;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 400px;
-    height: 50px;
-    margin-top: 5%;
-    border-radius: 12px;
-    border : 1px solid var(--light-gray);
-    background-color: var(--white);
-    font-size: 14px;
-    font-weight: 700;
-    &:active { opacity: 0.4; }
-    &:hover { filter: brightness(95%); }
-`;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     width: 400px;
+//     height: 50px;
+//     margin-top: 5%;
+//     border-radius: 12px;
+//     border : 1px solid var(--light-gray);
+//     background-color: var(--white);
+//     font-size: 14px;
+//     font-weight: 700;
+//     &:active { opacity: 0.4; }
+//     &:hover { filter: brightness(95%); }
+// `;
 
 export default LoginTemplate;
 
