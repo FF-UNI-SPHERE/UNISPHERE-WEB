@@ -5,7 +5,7 @@ import chRoot from "../resource/character_unisphere.png";
 
 function MainScreen() {
     return (
-        <div>
+        <div style={{height:'100%'}}>
             <div><img id="logo" src={logoRoot} alt="logo"/></div>
             <div id = "buttons">
                 <Button children='로그인 / 회원가입'></Button>

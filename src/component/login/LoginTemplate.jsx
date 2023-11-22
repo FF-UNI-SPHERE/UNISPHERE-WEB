@@ -4,6 +4,8 @@ import naverLogo from '../../resource/naverLogo.png';
 import kakaoLogo from '../../resource/kakaoLogo.svg';
 import googleLogo from '../../resource/googleLogo.svg';
 
+import WhiteBox from './WhiteBox'
+
 function LoginTemplate () {
     //추후 api 변경 시 같이 변경하기
     const login = ({socialType}) => {
@@ -18,7 +20,7 @@ function LoginTemplate () {
 
     return (
         //align-items: center -> 적용이 안되는 문제로 우선 삭제
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%'}}>
             <WhiteBox >
                 <h1 className="title">로그인하기</h1>
                 <h3>소셜 로그인으로 진행하세요</h3>
@@ -37,36 +39,13 @@ function LoginTemplate () {
                         &nbsp; 구글 로그인
                     </SocialLoginButton>
                 </ButtonContainer >
-                <HorizontalLine position="bottom"/>
-                <SignInButton >회원가입하기</SignInButton >
+                <HorizontalLine position="top"/>
+                {/* <HorizontalLine position="bottom"/>
+                <SignInButton >회원가입하기</SignInButton > */}
             </WhiteBox >
         </div>
     );
 };
-
-const WhiteBox  = styled.div`
-    margin-top: 7%;
-    margin-bottom: 7%;
-    width: 55%;
-    height: 60%;
-    padding: 2% 5% 3% 5%;
-    border-radius: 30px;
-    background-color: var(--white);
-    h1 {
-        font-family: var(--main-font);
-        font-size: 40px;
-        letter-spacing: -4px;
-        margin-bottom: 0;
-    }
-    h3 {
-        font-family: var(--main-font);
-        font-size: 20px;
-        font-weight: 400;
-        letter-spacing: -2px;
-        margin-top: 10px;
-        margin-bottom: 37px;
-    }
-`;
 
 const LineStyled = styled.span `
     flex: 1;
@@ -140,24 +119,25 @@ const SocialButtonIcon = styled.img`
     margin-right: 27%;
 `;
 
-const SignInButton  = styled.button`
-    margin-left: auto;
-    margin-right: auto;
+//사이트 자체 로그인 지원 안하므로 삭제됨
+// const SignInButton  = styled.button`
+//     margin-left: auto;
+//     margin-right: auto;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 400px;
-    height: 50px;
-    margin-top: 5%;
-    border-radius: 12px;
-    border : 1px solid var(--light-gray);
-    background-color: var(--white);
-    font-size: 14px;
-    font-weight: 700;
-    &:active { opacity: 0.4; }
-    &:hover { filter: brightness(95%); }
-`;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     width: 400px;
+//     height: 50px;
+//     margin-top: 5%;
+//     border-radius: 12px;
+//     border : 1px solid var(--light-gray);
+//     background-color: var(--white);
+//     font-size: 14px;
+//     font-weight: 700;
+//     &:active { opacity: 0.4; }
+//     &:hover { filter: brightness(95%); }
+// `;
 
 export default LoginTemplate;
 
