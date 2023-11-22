@@ -4,27 +4,3 @@
   align-items: center;
   justify-content: center;
 }
-
-/* 절대 위치 수정할 것 */
-#logo {
-  width: 855;
-  height: 153;
-  top: 108px;
-  left: 329px;
-  position: relative;
-}
-
-#character {
-  left: 570px;
-  top: 60px; 
-  position: relative;
-}
-
-#buttons {
-  width: 250px;
-  height: 80px; 
-  left: 44px;
-  top: 170px;
-  border-radius: 50px;
-  position: relative;
-}
