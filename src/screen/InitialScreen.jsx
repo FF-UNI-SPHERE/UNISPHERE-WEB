@@ -1,7 +1,7 @@
 import React from 'react';
-import Button from '../component/Button.jsx'
+import Button from '../component/InitialScreenButtonset.jsx'
 import logoRoot from "../resource/unisphere_logo.png";
-import chRoot from "../resource/character_unisphere.png";
+import chRoot from "../resource/avatar_unisphere.png";
 
 function MainScreen() {
     return (
@@ -12,7 +12,7 @@ function MainScreen() {
                 <Button children='이용 안내'></Button>
                 <Button children='뉴스 레터'></Button>
             </div>
-            <img id="character" src={chRoot} alt="ch"/>
+            <img id="avatar" src={chRoot} alt="ch"/>
         </div>
     );
 }
