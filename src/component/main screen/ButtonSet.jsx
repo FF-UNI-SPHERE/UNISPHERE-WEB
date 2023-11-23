@@ -1,11 +1,16 @@
 import styled from "styled-components";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
-function Button({ children }) {
-  return <div><StyledButton>{children}</StyledButton></div>;
+function Button({ children, onClick }) {
+  // function handleClick(e) {
+  //   if (onClick == 'navigateToLogin')
+  //     window.location.href = '/login'
+  // }
+  return (<div><StyledButton>{children}</StyledButton></div>);
 }
 
 const StyledButton = styled.button`
-  margin: 12px;
+  margin: 10px;
   width: 250px;
   height: 80px;
   border: none;
@@ -17,7 +22,7 @@ const StyledButton = styled.button`
   background: var(--button-bg-color, #d9d9d9);
   color: var(--button-color, #ffffff);
   box-shadow: 5px 5px 5px 0px gray;
-
+  
   &:active,
   &:hover,
   &:focus {
