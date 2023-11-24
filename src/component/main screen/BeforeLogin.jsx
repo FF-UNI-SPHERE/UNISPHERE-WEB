@@ -1,15 +1,15 @@
 import React from 'react';
-// import { useNavigate } from "react-router-dom";
 import styled from 'styled-components';
 import Button from './ButtonSet.jsx'
+import Avatar from './Avatar.jsx';
 import logoRoot from '../resource/unisphere_logo.png';
-import chRoot from '../resource/avatar_individual.png';
+import chRoot from '../resource/avatar_unisphere.png';
 
 /* 사용자가 로그인하기 전 화면 배치 */
 function BeforeLoginSet() {
   return (
     <MainScreenPosition>
-      <LogoPart style={{ height: '15.6%' }}>
+      <LogoPart>
         <img src={logoRoot} alt="logo"/>
       </LogoPart>
       <ButtonPart>
@@ -24,10 +24,11 @@ function BeforeLoginSet() {
         </text>
         <BubbleBubble></BubbleBubble>
       </BubblePart>
-      <AvatarPart>
-        <img  src={chRoot} alt="ch"/>
-        <name>UNISPHERE</name>
-      </AvatarPart>
+      <Avatar 
+        name='UNISPHERE' 
+        src={chRoot}
+        marginLeft='45%'
+      />
     </MainScreenPosition>
   );
 }
@@ -35,33 +36,21 @@ function BeforeLoginSet() {
 const MainScreenPosition = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100vw;
+  height: 100vh;
 `;
 
 const LogoPart = styled.div`
-  padding: 5% 23% 0% 23%;
+  margin: auto;
   position: relative;
 `;
 
 const ButtonPart = styled.div`
-  width: 6.048%;
   margin-top: 2%;
   margin-left: 2%;
+  margin-bottom: 4%;
   border-radius: 50px;
   position: relative;
-`;
-
-const AvatarPart = styled.div`
-  display: 'flex'; 
-  align-items: center;
-  width: 10%;
-  margin-top: 33%;
-  margin-left: 45%;
-  text-align: center;
-  position: fixed;
-  name {
-    font-family: 'Godo', sans-serif;
-    font-size: 22px;
-  }
 `;
 
 const BubblePart = styled.div`
@@ -70,8 +59,8 @@ const BubblePart = styled.div`
   border: none;
   border-radius: var(--button-radius, 20px);
   background-color: var(--bubble-bg-color, #d9d9d9);
-  margin-top: 29%;
-  margin-left: 45%;
+  margin-top: 50vh;
+  margin-left: 46vw;
   padding: 3px 10px 3px 10px;
   box-shadow: 4px 4px 4px 0px gray;
   -webkit-border-radius: 10px;
@@ -86,7 +75,6 @@ const BubblePart = styled.div`
 `;
 
 const BubbleBubble = styled.div`
-  content: '';
   position: absolute;
   border-style: solid;
   border-width: 22px 14px 0;
@@ -97,10 +85,5 @@ const BubbleBubble = styled.div`
   bottom: -22px;
   left: 29px;
 `;
-
-// const navigate = useNavigate();
-// const navigateToLogin = () => {
-//     navigate("/login");
-// };
 
 export default BeforeLoginSet;

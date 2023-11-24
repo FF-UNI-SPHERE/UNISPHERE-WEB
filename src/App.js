@@ -11,10 +11,10 @@ class App extends React.Component {
     return (
       <Router>
         <Routes>
-          <Route path="/" element={<MainScreen />} />
-          <Route path="/login" element={<LoginScreen />} />
-          {/* <Route path="/guide" element={<GuideScreen />} /> */}
-          <Route path="/myhomepage" element={<HomepageScreen />}/>
+          <Route path="/" element={<MainScreen/>}/>
+          <Route path="/login" element={<LoginScreen/>}/>
+          {/* <Route path="/guide" element={<GuideScreen/>}/> */}
+          <Route path="/myhomepage" element={<HomepageScreen/>}/>
         </Routes>
       </Router>
     );
