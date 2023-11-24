@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import naverLogo from '../../resource/naverLogo.png';
-import kakaoLogo from '../../resource/kakaoLogo.svg';
-import googleLogo from '../../resource/googleLogo.svg';
+import naverLogo from '../resource/naverLogo.png';
+import kakaoLogo from '../resource/kakaoLogo.svg';
+import googleLogo from '../resource/googleLogo.svg';
 
 import WhiteBox from './WhiteBox'
 

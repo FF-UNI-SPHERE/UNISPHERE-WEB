@@ -18,7 +18,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-  background-image: url('./resource/main_background.png');
+  background-image: url('./component/resource/main_background.png');
   background-size: cover;
 }
 
