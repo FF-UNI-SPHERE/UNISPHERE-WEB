@@ -11,12 +11,12 @@ function Button({ children, onClick }) {
 
 const StyledButton = styled.button`
   margin: 10px;
-  width: 250px;
-  height: 80px;
+  width: 16.53%;
+  height: 8vh;
   border: none;
   cursor: pointer;
   font-family: 'Godo', sans-serif;
-  font-size: 27px;
+  font-size: 1.6vw;
   padding: var(--button-padding, 12px 16px);
   border-radius: var(--button-radius, 50px);
   background: var(--button-bg-color, #d9d9d9);
@@ -28,7 +28,6 @@ const StyledButton = styled.button`
   &:focus {
     background: var(--button-hover-bg-color, #5e5e5e);
   }
-
   // 고도체
   @font-face {  
     font-family: 'Godo';
