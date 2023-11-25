@@ -17,16 +17,19 @@ function AfterLoginSet() {
         name='KOICA' 
         src={ch1Root}
         marginLeft='14.3%'
+        marginTop='61vh'
       />
       <Avatar 
         name='UNISPHERE' 
         src={ch2Root}
         marginLeft='45%'
+        marginTop='59.5vh'
       />
       <Avatar 
-        name='Jisoo Jeong' 
+        name='Jisoo' 
         src={ch3Root}
         marginLeft='71.3%'
+        marginTop='59.5vh'
       />
     </MainScreenPosition>
   );
@@ -40,7 +43,9 @@ const MainScreenPosition = styled.div`
 `;
 
 const LogoPart = styled.div`
-  margin: auto;
+  margin-top: 8vh;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
 `;
 

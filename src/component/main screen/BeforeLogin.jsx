@@ -28,6 +28,7 @@ function BeforeLoginSet() {
         name='UNISPHERE' 
         src={chRoot}
         marginLeft='45%'
+        marginTop='59.5vh'
       />
     </MainScreenPosition>
   );
@@ -41,14 +42,16 @@ const MainScreenPosition = styled.div`
 `;
 
 const LogoPart = styled.div`
-  margin: auto;
+  /* margin: auto; */
+  margin-top: 8vh;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
 `;
 
 const ButtonPart = styled.div`
-  margin-top: 2%;
+  margin-top: 13vh;
   margin-left: 2%;
-  margin-bottom: 4%;
   border-radius: 50px;
   position: relative;
 `;
