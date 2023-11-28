@@ -5,7 +5,7 @@ import logoRoot from '../resource/unisphere_logo.png';
 import ch1Root from '../resource/avatar_koica.png';
 import ch2Root from '../resource/avatar_unisphere.png';
 import ch3Root from '../resource/avatar_individual.png';
-import { FiMenu } from "react-icons/fi";
+import MenuBar from './MenuBar.jsx';
 
 /* 사용자가 로그인한 후 화면 배치 */
 function AfterLoginSet() {
@@ -13,7 +13,7 @@ function AfterLoginSet() {
 
   return (
     <MainScreenPosition>
-      <MenuBar isHovered={isMenuHovered}><FiMenu size='40px' color={isMenuHovered ? 'white' : 'black'}/></MenuBar>
+      <MenuBar isHovered={isMenuHovered}></MenuBar>
       <LogoPart>
         <img src={logoRoot} alt="logo"/>
       </LogoPart>
@@ -50,21 +50,6 @@ const LogoPart = styled.div`
   margin-left: auto;
   margin-right: auto;
   position: relative;
-`;
-
-const MenuBar = styled.button`
-  width: 5vw;
-  height: 8vh;
-  background: none;
-  border: none;
-  position: relative;
-  cursor: pointer;
-
-  &:active,
-  &:hover,
-  &:focus {
-    
-  }
 `;
 
 export default AfterLoginSet;
