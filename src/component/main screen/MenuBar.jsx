@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FiMenu } from "react-icons/fi";
 
-function MenuBar({ isMenuHovered }) {
+function MenuBar({}) {
+  const [isMenuHovered, setIsMenuHovered] = useState(false);  // 버튼 hover 여부
+
   return (
-    <MenuButton>
+    <MenuButton
+      onMouseOver={() => setIsMenuHovered(true)}
+      onMouseOut={() => setIsMenuHovered(false)}
+    >
       <FiMenu 
-        size='40px' 
+        size='40px'
         color={isMenuHovered ? 'white' : 'black'}
-        onMouseOver={({target})=>target.style.color="white"}
-        onMouseOut={({target})=>target.style.color="black"}
       />
     </MenuButton>
   );
@@ -24,8 +27,8 @@ const MenuButton = styled.button`
   cursor: pointer;
 
   &:active,
-  &:hover,
-  &:focus {
+  &:hover {
+    transition: 0.7s;
   }
 `;
 

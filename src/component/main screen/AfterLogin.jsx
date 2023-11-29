@@ -9,11 +9,9 @@ import MenuBar from './MenuBar.jsx';
 
 /* 사용자가 로그인한 후 화면 배치 */
 function AfterLoginSet() {
-  let isMenuHovered = false;  // 메뉴바 호버 여부
-
   return (
     <MainScreenPosition>
-      <MenuBar isHovered={isMenuHovered}></MenuBar>
+      <MenuBar></MenuBar>
       <LogoPart>
         <img src={logoRoot} alt="logo"/>
       </LogoPart>
