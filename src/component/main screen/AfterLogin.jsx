@@ -6,15 +6,20 @@ import ch1Root from '../resource/avatar_koica.png';
 import ch2Root from '../resource/avatar_unisphere.png';
 import ch3Root from '../resource/avatar_individual.png';
 import MenuBar from './MenuBar.jsx';
+import AlertBar from './Alert.jsx';
 
 /* 사용자가 로그인한 후 화면 배치 */
 function AfterLoginSet() {
   return (
     <MainScreenPosition>
-      <MenuBar></MenuBar>
+      <MenuBar/>
+      <AlertBar/>
       <LogoPart>
         <img src={logoRoot} alt="logo"/>
       </LogoPart>
+      {/* <AvatarPart>
+        
+      </AvatarPart> */}
       <Avatar 
         name='KOICA' 
         src={ch1Root}
@@ -48,6 +53,10 @@ const LogoPart = styled.div`
   margin-left: auto;
   margin-right: auto;
   position: relative;
+`;
+
+const AvatarPart = styled.div`
+  display: flex;
 `;
 
 export default AfterLoginSet;

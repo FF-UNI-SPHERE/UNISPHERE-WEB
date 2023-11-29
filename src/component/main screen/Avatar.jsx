@@ -3,17 +3,17 @@ import styled from 'styled-components';
 
 function Avatar(props) {
   return (
-    <AvatarPart style={{ 
+    <IsAvatar style={{ 
       marginLeft: props.marginLeft, 
       marginTop: props.marginTop, 
     }}>
       <img src={props.src} alt='ch'/>
       <name>{props.name}</name>
-    </AvatarPart>
+    </IsAvatar>
   );
 }
 
-const AvatarPart = styled.div`
+const IsAvatar = styled.div`
   align-items: center;
   width: 10vw;
   text-align: center;
