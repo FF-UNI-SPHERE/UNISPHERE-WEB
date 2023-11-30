@@ -7,7 +7,7 @@ import AfterLoginSet from '../component/main screen/AfterLogin';
 function MainScreen(props) {
   const [IsLogin, setIsLogin] = useState(0);
   
-  if (IsLogin) {
+  if (!IsLogin) {
     return(
       <BeforeLoginSet />
     );    

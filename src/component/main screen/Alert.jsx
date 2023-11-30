@@ -17,7 +17,7 @@ function AlertBar() {
           onMouseOut={() => setIsAlertHovered(false)}
         >
           <HiBell
-            size='40px'
+            size='4vh'
             color={ isAlertHovered ? 'white' : 'black' }
           />
         </AlertIcon>
@@ -26,7 +26,7 @@ function AlertBar() {
           onMouseOut={() => setIsMessageHovered(false)}
         >
           <TbMessage 
-            size='40px'
+            size='4vh'
             color={ isMessageHovered ? 'white' : 'black' }
           />
         </MessageIcon>
@@ -40,7 +40,7 @@ function AlertBar() {
           onMouseOut={() => setIsAlertHovered(false)}
         >
           <HiBellAlert
-            size='40px'
+            size='4vh'
             color={ isAlertHovered ? 'white' : 'black' }
           />
         </AlertIcon>
@@ -49,7 +49,7 @@ function AlertBar() {
           onMouseOut={() => setIsMessageHovered(false)}
         >
           <TbMessage 
-            size='40px'
+            size='4vh'
             color={ isMessageHovered ? 'white' : 'black' }
           />
         </MessageIcon>
@@ -59,6 +59,7 @@ function AlertBar() {
 }
 
 const AlertPosition = styled.div`
+  height: 5vh;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -70,6 +71,7 @@ const AlertIcon = styled.button`
   border: none;
   position: relative;
   margin: 0 1% 0 2%;
+  padding: 1% 0 0 0;
   cursor: pointer;
 
   &:active,
@@ -84,6 +86,7 @@ const MessageIcon = styled.button`
   border: none;
   position: relative;
   margin: 0 2% 0 1%;
+  padding: 1% 0 0 0;
   display: flex;
   
   cursor: pointer;

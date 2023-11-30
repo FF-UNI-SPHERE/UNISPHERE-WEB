@@ -18,9 +18,14 @@ const IsAvatar = styled.div`
   width: 10vw;
   text-align: center;
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  // 캐릭터의 이름
   name {
+    text-align: center;
     align-content: center;
     font-family: 'Godo', sans-serif;
+    font-weight: 700;
     font-size: 22px;
   }
 `;
