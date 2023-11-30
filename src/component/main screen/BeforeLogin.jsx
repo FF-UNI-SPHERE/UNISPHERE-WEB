@@ -43,14 +43,14 @@ const MainScreenPosition = styled.div`
 
 const LogoPart = styled.div`
   /* margin: auto; */
-  margin-top: 8vh;
+  margin-top: 13vh;
   margin-left: auto;
   margin-right: auto;
   position: relative;
 `;
 
 const ButtonPart = styled.div`
-  margin-top: 13vh;
+  margin-top: 8vh;
   margin-left: 2%;
   border-radius: 50px;
   position: relative;

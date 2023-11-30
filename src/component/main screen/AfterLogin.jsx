@@ -5,11 +5,15 @@ import logoRoot from '../resource/unisphere_logo.png';
 import ch1Root from '../resource/avatar_koica.png';
 import ch2Root from '../resource/avatar_unisphere.png';
 import ch3Root from '../resource/avatar_individual.png';
+import MenuBar from './MenuBar.jsx';
+import AlertBar from './Alert.jsx';
 
 /* 사용자가 로그인한 후 화면 배치 */
 function AfterLoginSet() {
   return (
     <MainScreenPosition>
+      <MenuBar/>
+      <AlertBar/>
       <LogoPart>
         <img src={logoRoot} alt="logo"/>
       </LogoPart>
@@ -43,10 +47,14 @@ const MainScreenPosition = styled.div`
 `;
 
 const LogoPart = styled.div`
-  margin-top: 8vh;
   margin-left: auto;
   margin-right: auto;
   position: relative;
 `;
+
+// const AvatarPart = styled.div`
+//   display: flex;
+//   flex-direction: row;
+// `;
 
 export default AfterLoginSet;
