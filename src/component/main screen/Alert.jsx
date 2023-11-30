@@ -6,18 +6,28 @@ import { TbMessage } from "react-icons/tb";
 
 function AlertBar() {
   const [isAlertExist, setIsAlertExist] = useState(false);  // 알람 존재 여부에 따라 아이콘 변경
-  
+  const [isAlertHovered, setIsAlertHovered] = useState(false);  // 알림 버튼 hover 여부
+  const [isMessageHovered, setIsMessageHovered] = useState(false);  // 채팅 버튼 hover 여부
+
   if (!isAlertExist) {  // 알람이 존재하지 않으면
     return (
       <AlertPosition>
-        <AlertIcon>
+        <AlertIcon
+          onMouseOver={() => setIsAlertHovered(true)}
+          onMouseOut={() => setIsAlertHovered(false)}
+        >
           <HiBell
             size='40px'
+            color={ isAlertHovered ? 'white' : 'black' }
           />
         </AlertIcon>
-        <MessageIcon>
+        <MessageIcon
+          onMouseOver={() => setIsMessageHovered(true)}
+          onMouseOut={() => setIsMessageHovered(false)}
+        >
           <TbMessage 
             size='40px'
+            color={ isMessageHovered ? 'white' : 'black' }
           />
         </MessageIcon>
       </AlertPosition>
@@ -25,14 +35,22 @@ function AlertBar() {
   } else {  // 알람이 존재한다면
     return (
       <AlertPosition>
-        <AlertIcon>
+        <AlertIcon
+          onMouseOver={() => setIsAlertHovered(true)}
+          onMouseOut={() => setIsAlertHovered(false)}
+        >
           <HiBellAlert
             size='40px'
+            color={ isAlertHovered ? 'white' : 'black' }
           />
         </AlertIcon>
-        <MessageIcon>
+        <MessageIcon
+          onMouseOver={() => setIsMessageHovered(true)}
+          onMouseOut={() => setIsMessageHovered(false)}
+        >
           <TbMessage 
             size='40px'
+            color={ isMessageHovered ? 'white' : 'black' }
           />
         </MessageIcon>
       </AlertPosition>
