@@ -7,7 +7,7 @@ function Avatar(props) {
       marginLeft: props.marginLeft, 
       marginTop: props.marginTop, 
     }}>
-      <img src={props.src} alt='ch'/>
+      <img src={props.src} width={props.width} alt='ch'/>
       <name>{props.name}</name>
     </IsAvatar>
   );

@@ -27,6 +27,7 @@ function BeforeLoginSet() {
       <Avatar 
         name='UNISPHERE' 
         src={chRoot}
+        width='155vw'
         marginLeft='45%'
         marginTop='59.5vh'
       />

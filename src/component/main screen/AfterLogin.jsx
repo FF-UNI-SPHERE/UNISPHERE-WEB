@@ -20,18 +20,21 @@ function AfterLoginSet() {
       <Avatar 
         name='KOICA' 
         src={ch1Root}
+        width='155vw'
         marginLeft='14.3%'
         marginTop='61vh'
       />
       <Avatar 
         name='UNISPHERE' 
         src={ch2Root}
+        width='155vw'
         marginLeft='45%'
         marginTop='59.5vh'
       />
       <Avatar 
         name='Jisoo' 
         src={ch3Root}
+        width='210vw'
         marginLeft='71.3%'
         marginTop='59.5vh'
       />
