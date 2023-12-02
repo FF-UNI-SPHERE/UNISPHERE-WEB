@@ -5,11 +5,11 @@ import { TbMessage } from "react-icons/tb";
 import { IoMdAlert } from "react-icons/io";
 
 function AlertBar() {
-  const [isAlertExist, setIsAlertExist] = useState(false);  // 알람 존재 여부에 따라 아이콘 변경
+  const [isAlertExist, setIsAlertExist] = useState(true);  // 알람 존재 여부에 따라 아이콘 변경
   const [isAlertHovered, setIsAlertHovered] = useState(false);  // 알림 버튼 hover 여부
   const [isMessageHovered, setIsMessageHovered] = useState(false);  // 채팅 버튼 hover 여부
 
-  if (isAlertExist) {  // 알람이 존재하지 않으면
+  if (!isAlertExist) {  // 알람이 존재하지 않는다면
     return (
       <AlertPosition>
         <AlertButton

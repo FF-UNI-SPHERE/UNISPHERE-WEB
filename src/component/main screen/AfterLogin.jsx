@@ -52,9 +52,4 @@ const LogoPart = styled.div`
   position: relative;
 `;
 
-// const AvatarPart = styled.div`
-//   display: flex;
-//   flex-direction: row;
-// `;
-
 export default AfterLoginSet;
