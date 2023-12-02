@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import Avatar from './Avatar.jsx';
+import Avatar from '../common/Avatar.jsx';
 import logoRoot from '../resource/unisphere_logo.png';
 import ch1Root from '../resource/avatar_koica.png';
 import ch2Root from '../resource/avatar_unisphere.png';
 import ch3Root from '../resource/avatar_individual.png';
-import MenuBar from './MenuBar.jsx';
-import AlertBar from './Alert.jsx';
+import MenuBar from '../common/MenuBar.jsx';
+import AlertBar from '../common/Alert.jsx';
 
 /* 사용자가 로그인한 후 화면 배치 */
 function AfterLoginSet() {

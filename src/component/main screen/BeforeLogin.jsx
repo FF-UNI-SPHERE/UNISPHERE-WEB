@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from './ButtonSet.jsx'
-import Avatar from './Avatar.jsx';
+import Avatar from '../common/Avatar.jsx';
 import logoRoot from '../resource/unisphere_logo.png';
 import chRoot from '../resource/avatar_unisphere.png';
 
