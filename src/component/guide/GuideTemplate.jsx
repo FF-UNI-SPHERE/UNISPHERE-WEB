@@ -1,5 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
+import MenuBar from '../main screen/MenuBar';
 
 function GuideTemplate() {
     const detail = [
@@ -11,29 +12,17 @@ function GuideTemplate() {
 
     return (
         <>
-        {/* <Header /> */}
-        {/* <TranslucentBox>
-            <InnerTopBar />
+        <MenuBar />
+        <TranslucentBox>
+            <GrayTopBar />
                 <InnerText />
                 <InnerText />
                 <InnerText />
                 <InnerText />
-        </TranslucentBox> */}
+        </TranslucentBox>
         </>
     );
 };
-
-function InnerTopBar() {
-    return (
-        <>
-        <h3>이용안내</h3>
-        <NavButton>개인/단체 아바타</NavButton>
-        <NavButton>단체 홈페이지</NavButton>
-        <NavButton>뉴스레터</NavButton>
-        <NavButton>광장</NavButton>
-        </>
-    );
-}
 
 function InnerText() {
     return (
@@ -45,5 +34,19 @@ function InnerText() {
         </>
     );
 }
+
+const TranslucentBox = styled.div`
+    width: 90vw;
+    height: 80vh;
+    bottom: 0;
+    fill: rgba(255, 255, 255, 0.90);
+`;
+
+const GrayBox = styled.div`
+    width: 100%;
+    height: 10vh;
+    fill: rgba(104, 104, 104, 0.70);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+`;
 
 export default GuideTemplate;
