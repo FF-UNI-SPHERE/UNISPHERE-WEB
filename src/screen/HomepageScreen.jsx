@@ -17,8 +17,7 @@ function HomepageScreen() {
         <img src={logoRoot} width='130vw' alt="logo"/>
       </LogoPart>
       <ButtonOne>홈피</ButtonOne>
-      <ButtonTwo>사진첩</ButtonTwo>
-      <ButtonThree>방명록</ButtonThree>
+      <ButtonTwo>공지사항</ButtonTwo>
       <WhiteBox>
         <BubblePart>
           <text>
@@ -115,8 +114,8 @@ const BubbleBubble = styled.div`
 `;
 
 const ButtonOne = styled.button`
-  width: 7.5vw;
-  height: 10vh;
+  width: 8.5vw;
+  height: 11vh;
   background: var(--button-bg-color, #FAFF00);
   opacity: 85%;
   border: none;
@@ -145,8 +144,8 @@ const ButtonOne = styled.button`
 `;
 
 const ButtonTwo = styled.button`
-  width: 7.5vw;
-  height: 10vh;
+  width: 8.5vw;
+  height: 11vh;
   background: var(--button-bg-color, #0029FF);
   opacity: 85%;
   border: none;
@@ -154,31 +153,7 @@ const ButtonTwo = styled.button`
   position: absolute;
   z-index: 0; // 컴포넌트 상대적으로 배치
   top: 34vh;
-  left: 25.5vw;
-  font-family: 'Godo', sans-serif;
-  font-size: 15px;
-  color: white;
-  box-shadow: 5px 5px 5px 0px gray;
-
-  cursor: pointer;
-  &:active,
-  &:hover,
-  &:focus {
-    opacity: 100%;
-  }
-`;
-
-const ButtonThree = styled.button`
-  width: 7.5vw;
-  height: 10vh;
-  background: var(--button-bg-color, #FF0000);
-  opacity: 85%;
-  border: none;
-  border-radius: 20px 20px 0 0;
-  position: absolute;
-  z-index: 0; // 컴포넌트 상대적으로 배치
-  top: 34vh;
-  left: 34vw;
+  left: 26.5vw;
   font-family: 'Godo', sans-serif;
   font-size: 15px;
   color: white;
