@@ -52,7 +52,7 @@ function GuideTemplate() {
             <ContentsContainer>
                 <GuideContents detail={detail[0]} img={{ first: imglist[0][0], second: imglist[0][1]}} name="개인/단체 아바타" ref={mainRef}/>
                 <GuideContents detail={detail[1]} img={{ first: imglist[1][0], second: imglist[1][1]}} name="단체 홈페이지" ref={homePageRef}/>
-                <GuideContents detail={detail[2]} img={{ first: imglist[2][0], second: imglist[2][1]}} name="뉴스레터" ref={articleRef}/>
+                <GuideContents detail={detail[2]} img={{ first: imglist[2][0], second: imglist[2][1]}} name="이달의 소식지" ref={articleRef}/>
                 <GuideContents detail={detail[3]} img={{ first: imglist[3][0], second: imglist[3][1]}} name="광장" ref={plazaRef}/>
             </ContentsContainer>
         </TranslucentBox>
