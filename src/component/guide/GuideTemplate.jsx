@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import styled from 'styled-components';
-import MenuBar from '../main screen/MenuBar';
-import AlertBar from '../main screen/Alert';
-import {imglist, GuideContents} from './GuideContents.jsx';
+import MenuBar from '../common/MenuBar';
+import AlertBar from '../common/Alert';
+import { imglist, GuideContents } from './GuideContents.jsx';
 import GrayNavBar from "./GrayNavBar.jsx";
 
 function GuideTemplate() {
