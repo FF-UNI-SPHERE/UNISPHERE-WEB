@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 import React, { useRef, useEffect, useState } from "react";
 
-function GrayNavBar({onNavClick, refs}) {
+function GrayNavBar({onNavClick, refs, getStyle}) {
     return (
         <GrayBox>
             <h3>이용안내</h3>
             <NavButtonContainer>
-                <NavButton onClick={()=>{onNavClick(refs.mainRef)}}>개인/단체 아바타</NavButton>
+                <NavButton onClick={()=>{onNavClick(refs.mainRef)}} style={getStyle(refs.mainRef)}>개인/단체 아바타</NavButton>
                 <span>|</span>
-                <NavButton onClick={()=>{onNavClick(refs.homePageRef)}}>단체 홈페이지</NavButton>
+                <NavButton onClick={()=>{onNavClick(refs.homePageRef)}} style={getStyle(refs.homePageRef)}>단체 홈페이지</NavButton>
                 <span>|</span>
-                <NavButton onClick={()=>{onNavClick(refs.articleRef)}}>뉴스레터</NavButton>
+                <NavButton onClick={()=>{onNavClick(refs.articleRef)}} style={getStyle(refs.articleRef)}>이달의 소식지</NavButton>
                 <span>|</span>
-                <NavButton onClick={()=>{onNavClick(refs.plazaRef)}}>광장</NavButton>
+                <NavButton onClick={()=>{onNavClick(refs.plazaRef)}} style={getStyle(refs.plazaRef)}>광장</NavButton>
             </NavButtonContainer>
         </GrayBox>
     );
@@ -44,8 +44,19 @@ const GrayBox = styled.div`
 
 const NavButtonContainer = styled.div`
     position: absolute;
-    margin-left: 36.5rem;
-    margin-right: 3.44rem;
+    margin-right: 3vw;
+    right: 0;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 40vw;
+
+    span {
+        font-size: 1.5625rem;
+        font-weight: 100;
+    }
 `;
 
 const NavButton = styled.button`
@@ -55,6 +66,13 @@ const NavButton = styled.button`
     line-height: normal;
     letter-spacing: -0.156rem;
 
+    display: inline-block;
+
+    background-color: transparent;
+    border: 0;
+    &:hover {
+        cursor: pointer;
+    }
 `;
 
 export default GrayNavBar;

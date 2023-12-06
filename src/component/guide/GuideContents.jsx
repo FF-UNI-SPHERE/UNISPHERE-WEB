@@ -17,19 +17,43 @@ const imglist = [
 
 const GuideContents = forwardRef(({detail, img, name}, ref) => {
     return (
-        <div ref={ref}>
+        <ContentBox ref={ref}>
             <h4>{name}</h4>
-            <h5>{detail}</h5>
+            <pre>{detail}</pre>
             <div>
                 <GuideImage src={img.first} alt="First"/>
                 { img.second === null ? null : <GuideImage src={img.second} alt="Second"/>}
             </div>
-        </div>
+        </ContentBox>
     );
 });
 
+const ContentBox = styled.div`
+    text-align: left;
+    height: auto;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    h4 {
+        color: #000;
+        font-size: 1.875rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.225rem;
+        font-family: 'Godo', sans-serif;
+    }
+    pre {
+        font-size: 1.25rem;
+        font-weight: 400;
+        font-family: 'Inter', sans-serif;
+    }
+`;
+
 const GuideImage = styled.img`
-    
+    width: 32.3rem;
+    height: 21.1rem;
+    margin-right: 2vw;
 `;
 
 export {imglist, GuideContents};
+
