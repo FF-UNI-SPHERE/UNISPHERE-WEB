@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import naverLogo from '../resource/naverLogo.png';
-import kakaoLogo from '../resource/kakaoLogo.svg';
-import googleLogo from '../resource/googleLogo.svg';
+import naverLogo from '../resource/logo_naver.png';
+import kakaoLogo from '../resource/logo_kakao.png';
+import googleLogo from '../resource/logo_google.png';
 
 import WhiteBox from './WhiteBox'
 
 function LoginTemplate () {
     //추후 api 변경 시 같이 변경하기
-    const login = ({socialType}) => {
+    const login = ({socialtype}) => {
         try {
             window.location.replace(
-                import.meta.env.VITE_BE_HOST + `/api/auth/${socialType}/login`,
+                import.meta.env.VITE_BE_HOST + `/api/auth/${socialtype}/login`,
             );
         } catch (error) {
             console.error("유효하지 않은 URL입니다!", error);
@@ -26,15 +26,15 @@ function LoginTemplate () {
                 <h3>소셜 로그인으로 진행하세요</h3>
                 <HorizontalLine position="top"/>
                 <ButtonContainer >
-                    <SocialLoginButton socialType="kakao" onClick={() => login('kakao')}>
+                    <SocialLoginButton socialtype="kakao" onClick={() => login(socialtype)}>
                         <SocialButtonIcon src={kakaoLogo} alt="카카오 로고" className="social-icon"/>
                         카카오 로그인
                     </SocialLoginButton>
-                    <SocialLoginButton socialType="naver" onClick={() => login('naver')}>
+                    <SocialLoginButton socialtype="naver" onClick={() => login(socialtype)}>
                         <SocialButtonIcon src={naverLogo} alt="네이버 로고" className="social-icon"/>
                         네이버 로그인
                     </SocialLoginButton>
-                    <SocialLoginButton socialType="google" onClick={() => login('google')}>
+                    <SocialLoginButton socialtype="google" onClick={() => login(socialtype)}>
                         <SocialButtonIcon src={googleLogo} alt="구글 로고" className="social-icon"/>
                         &nbsp; 구글 로그인
                     </SocialLoginButton>
@@ -101,15 +101,15 @@ const SocialLoginButton = styled.button`
 
     outline: none;
     border: ${props => 
-        props.socialType === 'google' ? '1px solid #D9D9D9' : 'none'};
+        props.socialtype === 'google' ? '1px solid #D9D9D9' : 'none'};
     background-color: ${props =>
-        props.socialType === 'naver' ? '#03c75a' :
-        props.socialType === 'kakao' ? '#FEE500' : 
-        props.socialType === 'google' ? '#FFF' : 'var(--white)'};
+        props.socialtype === 'naver' ? '#03c75a' :
+        props.socialtype === 'kakao' ? '#FEE500' : 
+        props.socialtype === 'google' ? '#FFF' : 'var(--white)'};
     color: ${props =>
-        props.socialType === 'naver' ? '#FFF' :
-        props.socialType === 'kakao' ? '#000' : 
-        props.socialType === 'google' ? '#000' : 'var(--black)'};
+        props.socialtype === 'naver' ? '#FFF' :
+        props.socialtype === 'kakao' ? '#000' : 
+        props.socialtype === 'google' ? '#000' : 'var(--black)'};
 `;
 
 const SocialButtonIcon = styled.img`

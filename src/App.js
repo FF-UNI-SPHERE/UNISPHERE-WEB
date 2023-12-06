@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MainScreen from './screen/MainScreen';
 import LoginScreen from './screen/LoginScreen';
-// import GuideScreen from './screen/GuideScreen';
+import GuideScreen from './screen/GuideScreen';
 import HomepageScreen from './screen/HomepageScreen';
 
 class App extends React.Component {
@@ -13,7 +13,7 @@ class App extends React.Component {
         <Routes>
           <Route path="/" element={<MainScreen/>}/>
           <Route path="/login" element={<LoginScreen/>}/>
-          {/* <Route path="/guide" element={<GuideScreen/>}/> */}
+          <Route path="/guide" element={<GuideScreen/>}/>
           <Route path="/myhomepage" element={<HomepageScreen/>}/>
         </Routes>
       </Router>
