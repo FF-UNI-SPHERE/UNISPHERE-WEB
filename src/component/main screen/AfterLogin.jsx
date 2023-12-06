@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import Avatar from './Avatar.jsx';
+import Avatar from '../common/Avatar.jsx';
 import logoRoot from '../resource/unisphere_logo.png';
 import ch1Root from '../resource/avatar_koica.png';
 import ch2Root from '../resource/avatar_unisphere.png';
 import ch3Root from '../resource/avatar_individual.png';
-import MenuBar from './MenuBar.jsx';
-import AlertBar from './Alert.jsx';
+import MenuBar from '../common/MenuBar.jsx';
+import AlertBar from '../common/Alert.jsx';
 
 /* 사용자가 로그인한 후 화면 배치 */
 function AfterLoginSet() {
@@ -20,18 +20,21 @@ function AfterLoginSet() {
       <Avatar 
         name='KOICA' 
         src={ch1Root}
+        width='155vw'
         marginLeft='14.3%'
         marginTop='61vh'
       />
       <Avatar 
         name='UNISPHERE' 
         src={ch2Root}
+        width='155vw'
         marginLeft='45%'
         marginTop='59.5vh'
       />
       <Avatar 
         name='Jisoo' 
         src={ch3Root}
+        width='210vw'
         marginLeft='71.3%'
         marginTop='59.5vh'
       />
@@ -51,10 +54,5 @@ const LogoPart = styled.div`
   margin-right: auto;
   position: relative;
 `;
-
-// const AvatarPart = styled.div`
-//   display: flex;
-//   flex-direction: row;
-// `;
 
 export default AfterLoginSet;

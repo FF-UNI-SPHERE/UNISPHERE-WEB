@@ -1,21 +1,76 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { FiMenu } from "react-icons/fi";
 
-function RightNavigationBar({ EnterPrise }) {
+// 화면 최상단에 위치한 전체 메뉴 바
+function MenuBar({ EnterPrise }) {
   const [isMenuHovered, setIsMenuHovered] = useState(false);  // 버튼 hover 여부
 
   return (
     <Menus>
-      <Logout>로그아웃</Logout>
-      <Bar>|</Bar>
-      <Plaza>소통의 광장</Plaza>
-      <Bar>|</Bar>
-      <EnterprisePage>{EnterPrise} 홈페이지</EnterprisePage>
+      <LeftNavigationBar/>
+      <RightNavigationBar EnterPrise={'KCOC'}/>
     </Menus>
   );
 }
 
 const Menus = styled.div`
+  width: auto;
+  height: 8vh;
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: row;
+`;
+
+// LNB
+function LeftNavigationBar({}) {
+  const [isMenuHovered, setIsMenuHovered] = useState(false);  // 버튼 hover 여부
+
+  return (
+    <LeftNavigationButton
+      onMouseOver={() => setIsMenuHovered(true)}
+      onMouseOut={() => setIsMenuHovered(false)}
+    >
+      <FiMenu 
+        size='40px'
+        color={ isMenuHovered ? 'white' : 'black' }
+      />
+    </LeftNavigationButton>
+  );
+}
+
+const LeftNavigationButton = styled.button`
+  width: 5vw;
+  height: 8vh;
+  background: none;
+  border: none;
+  position: relative;
+  justify-content: flex-start;
+  cursor: pointer;
+
+  &:active,
+  &:hover {
+    transition: 0.7s;
+  }
+`;
+
+// RNB 
+function RightNavigationBar({ EnterPrise }) {
+  const [isMenuHovered, setIsMenuHovered] = useState(false);  // 버튼 hover 여부
+
+  return (
+    <Navs>
+      <Logout>로그아웃</Logout>
+      <Bar>|</Bar>
+      <Plaza>소통의 광장</Plaza>
+      <Bar>|</Bar>
+      <EnterprisePage>{EnterPrise} 홈페이지</EnterprisePage>
+    </Navs>
+  );
+}
+
+const Navs = styled.div`
   width: 31vw;
   height: 4vh;
   background: white;
@@ -75,13 +130,6 @@ const Plaza = styled.button`
   &:hover {
     transition: 0.7s;
   }
-  // 고도체
-  @font-face {  
-    font-family: 'Godo';
-    font-style: normal;
-    font-weight: 700;
-    src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff') format('woff');
-  }
 `;
 
 const EnterprisePage = styled.button`
@@ -98,13 +146,6 @@ const EnterprisePage = styled.button`
   &:hover {
     transition: 0.7s;
   }
-  // 고도체
-  @font-face {  
-    font-family: 'Godo';
-    font-style: normal;
-    font-weight: 700;
-    src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff') format('woff');
-  }
 `;
 
-export default RightNavigationBar;
+export default MenuBar;

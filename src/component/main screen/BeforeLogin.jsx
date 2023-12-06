@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from './ButtonSet.jsx'
-import Avatar from './Avatar.jsx';
+import Avatar from '../common/Avatar.jsx';
 import logoRoot from '../resource/unisphere_logo.png';
 import chRoot from '../resource/avatar_unisphere.png';
 
@@ -27,6 +27,7 @@ function BeforeLoginSet() {
       <Avatar 
         name='UNISPHERE' 
         src={chRoot}
+        width='155vw'
         marginLeft='45%'
         marginTop='59.5vh'
       />
@@ -70,7 +71,7 @@ const BubblePart = styled.div`
   -moz-border-radius: 10px;
   border-radius: 10px;
   text-align: center;
-  position: fixed;
+  position: absolute;
   text {
     font-family: 'Godo', sans-serif;
     font-size: 10px;

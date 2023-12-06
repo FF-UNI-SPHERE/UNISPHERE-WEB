@@ -7,7 +7,7 @@ function Avatar(props) {
       marginLeft: props.marginLeft, 
       marginTop: props.marginTop, 
     }}>
-      <img src={props.src} alt='ch'/>
+      <img src={props.src} width={props.width} alt='ch'/>
       <name>{props.name}</name>
     </IsAvatar>
   );
@@ -17,7 +17,7 @@ const IsAvatar = styled.div`
   align-items: center;
   width: 10vw;
   text-align: center;
-  position: fixed;
+  position: absolute;
   display: flex;
   flex-direction: column;
   // 캐릭터의 이름

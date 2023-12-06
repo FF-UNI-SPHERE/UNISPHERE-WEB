@@ -5,7 +5,7 @@ module.exports = override(
         'babel-plugin-styled-components',
         {
             displayName: true,
-            fileName: false
+            fileName: false,
         }
     ])
 );

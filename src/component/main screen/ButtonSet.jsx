@@ -2,10 +2,6 @@ import styled from "styled-components";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 function Button({ children, onClick }) {
-  // function handleClick(e) {
-  //   if (onClick == 'navigateToLogin')
-  //     window.location.href = '/login'
-  // }
   return (<div><StyledButton>{children}</StyledButton></div>);
 }
 
@@ -14,7 +10,6 @@ const StyledButton = styled.button`
   width: 16.53%;
   height: 8vh;
   border: none;
-  cursor: pointer;
   font-family: 'Godo', sans-serif;
   font-size: 1.6vw;
   padding: var(--button-padding, 12px 16px);
@@ -23,6 +18,7 @@ const StyledButton = styled.button`
   color: var(--button-color, #ffffff);
   box-shadow: 5px 5px 5px 0px gray;
   
+  cursor: pointer;
   &:active,
   &:hover,
   &:focus {
