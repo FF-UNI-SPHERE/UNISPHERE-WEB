@@ -121,7 +121,7 @@ const ButtonOne = styled.button`
   opacity: 85%;
   border: none;
   border-radius: 20px 20px 0 0;
-  position: fixed;
+  position: absolute;
   z-index: 3; // 컴포넌트 상대적으로 배치
   top: 34vh;
   left: 17vw;
@@ -151,7 +151,7 @@ const ButtonTwo = styled.button`
   opacity: 85%;
   border: none;
   border-radius: 20px 20px 0 0;
-  position: fixed;
+  position: absolute;
   z-index: 0; // 컴포넌트 상대적으로 배치
   top: 34vh;
   left: 25.5vw;
@@ -175,7 +175,7 @@ const ButtonThree = styled.button`
   opacity: 85%;
   border: none;
   border-radius: 20px 20px 0 0;
-  position: fixed;
+  position: absolute;
   z-index: 0; // 컴포넌트 상대적으로 배치
   top: 34vh;
   left: 34vw;

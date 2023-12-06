@@ -71,7 +71,7 @@ const BubblePart = styled.div`
   -moz-border-radius: 10px;
   border-radius: 10px;
   text-align: center;
-  position: fixed;
+  position: absolute;
   text {
     font-family: 'Godo', sans-serif;
     font-size: 10px;
