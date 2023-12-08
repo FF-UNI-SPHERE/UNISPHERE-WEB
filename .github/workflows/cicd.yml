@@ -25,6 +25,7 @@ jobs:
 
       - name: Install Dependencies, Lint, and Build
         run: |
+          echo ${{ secrets.MAIN_ENV }} | base64 -d > .env
           pnpm install
           pnpm build
 
