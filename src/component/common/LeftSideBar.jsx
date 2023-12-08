@@ -1,52 +1,64 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import unisphereHand from '../resource/unisphere_logo_hand.png';
 
 function LeftSideBar({isOpen}) {
-  const [isSubToggleOpen, setIsSubToggleOpen] = useState(false);  // 상세버튼 클릭 여부
+  const [toggleStates, setToggleStates] = useState({});
   
-  const toggleSubItem = () => {
-    setIsSubToggleOpen(!isSubToggleOpen);
+  const toggleItem = (idx) => {
+    setToggleStates(prevState => ({
+      ...prevState,
+      [idx]: !prevState[idx]
+    }));
   };
+
+  useEffect(() => {
+    if(!isOpen) {
+      setToggleStates(prevState => {
+        const newState = {};
+        for(const key in prevState) {
+          newState[key] = false;
+        }
+        return newState;
+      });
+    }
+  }, [isOpen]);
 
   const moveToPage = (link) => {
     window.location.replace(
-      import.meta.env.VITE_FE_HOST + `/${link}`,
+      `/${link}`
     );
   };
 
   return (
-    isOpen && (
-      <SideBar>
-        <SideBarContent>
-            <SideBarItems onToggle={toggleSubItem} children="유니스피어" />
-            {(isSubToggleOpen) && (
-              <SubItemContents>
-                <SubItemBtn>플랫폼 소개</SubItemBtn>
-                <SubItemBtn onClick={()=>{moveToPage("guide")}}>이용 안내</SubItemBtn>
-                <SubItemBtn>공지 사항</SubItemBtn>
-              </SubItemContents> 
-            )} 
-            <SideBarItems onToggle={toggleSubItem} children="뉴스 레터" />
-            {(isSubToggleOpen) && (
-              <SubItemContents>
-                <SubItemBtn onClick={()=>{moveToPage("article")}}>이달의 소식지</SubItemBtn>
-                <SubItemBtn>소식지 투고</SubItemBtn>
-                <SubItemBtn>광고 문의</SubItemBtn>
-              </SubItemContents> 
-            )}
-            <SideBarItems children="기부 / 모금" />
-            <SideBarItems children="단체 활동" />
-            {(isSubToggleOpen) && (
-              <SubItemContents>
-                <SubItemBtn onClick={()=>{moveToPage("myhomepage")}}>단체 홈페이지</SubItemBtn>
-                <SubItemBtn onClick={()=>{moveToPage("plaza")}}>광장</SubItemBtn>
-                <SubItemBtn>단체룸</SubItemBtn>
-              </SubItemContents> 
-            )}
-        </SideBarContent>
+    <SideBar $isopen={isOpen}>
+      <SideBarItems onToggle={() => toggleItem(1)} children="유니스피어" />
+      {(toggleStates[1]) && (
+        <SubItemContents>
+          <SubItemBtn>플랫폼 소개</SubItemBtn>
+          <SubItemBtn onClick={()=>{moveToPage("guide")}}>이용 안내</SubItemBtn>
+          <SubItemBtn>공지 사항</SubItemBtn>
+        </SubItemContents> 
+      )}
+      <SideBarItems onToggle={() => toggleItem(2)} children="뉴스 레터" />
+      {(toggleStates[2]) && (
+        <SubItemContents>
+          <SubItemBtn onClick={()=>{moveToPage("article")}}>이달의 소식지</SubItemBtn>
+          <SubItemBtn>소식지 투고</SubItemBtn>
+          <SubItemBtn>광고 문의</SubItemBtn>
+        </SubItemContents> 
+      )}
+      <SideBarItems children="기부 / 모금" />
+      <SideBarItems onToggle={() => toggleItem(3)} children="단체 활동" />
+      {(toggleStates[3]) && (
+        <SubItemContents>
+          <SubItemBtn onClick={()=>{moveToPage("myhomepage")}}>단체 홈페이지</SubItemBtn>
+          <SubItemBtn onClick={()=>{moveToPage("plaza")}}>소통의 광장</SubItemBtn>
+          <SubItemBtn>모든 단체 보기</SubItemBtn>
+        </SubItemContents> 
+      )}
     </SideBar>
-  ));
+  );
 }
 
 const SideBarItems = ({onToggle, children}) => {
@@ -59,33 +71,29 @@ const SideBarItems = ({onToggle, children}) => {
 };
 
 const SideBar = styled.div`
-  width: ${props => props.isOpen ? '12.7rem' : '0'};
-  height: ${props => props.isOpen ? '100vh' : '0'};
+  width: 12.7rem;
+  padding-top: 8vh;
+  height: 92vh;
   position: absolute;
   left: 0;
   top: 0;
-  transition: 0.5s;
 
-  z-index: 2000;
-`;
-
-const SideBarContent = styled.div`
-  width: 12.7rem;
-  height: 100vh;
   background: rgba(255, 255, 255, 0.50);
   display: flex;
   flex-direction: column;
 
-  padding-top: 8vh;
-  padding-left: 1.44rem;
+  transform: ${({$isopen}) => $isopen ? 'translateX(0)' : 'translateX(-100%)'};
+  transition: transform 0.3s ease-in-out;
+  z-index: 2000;
 `;
 
 const SideBarItemBtn = styled.button`
   width: 100%;
-  height: 10vh;
+  height: 3.75rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  padding-left: 1.44rem;
 
   border: none;
   background-color: transparent;
@@ -101,7 +109,8 @@ const SideBarItemBtn = styled.button`
     font-style: normal;
     font-weight: 400;
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
-    margin-left: 1.25rem;
+    margin-left: 0.7rem;
+    margin-top: 1.15rem;
   }
   &:hover {
     color: #FFF;
@@ -110,19 +119,23 @@ const SideBarItemBtn = styled.button`
 
 const SubItemContents = styled.div`
   width: 100%;
-  height: 100%;
+  height: 13vh;
   display: flex;
   flex-direction: column;
 `;
 
 const SubItemBtn = styled.button`
   width: 6.875rem;
-  height: 3.125rem;
+  height: 1.8rem;
   font-size: 1rem;
   font-weight: 400;
   text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
   margin-left: 3.37rem;
   color: #000;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 
   background-color: transparent;
   border: none;
