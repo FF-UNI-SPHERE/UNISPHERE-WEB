@@ -7,11 +7,10 @@ import googleLogo from '../resource/logo_google.png';
 import WhiteBox from './WhiteBox'
 
 function LoginTemplate () {
-    //추후 api 변경 시 같이 변경하기
-    const login = ({socialtype}) => {
+    const login = (socialtype) => {
         try {
             window.location.replace(
-                import.meta.env.REACT_APP_BE_HOST + `/api/v1/auth/login/oauth-types/${socialtype}`,
+                `${process.env.REACT_APP_BE_HOST}/api/v1/auth/login/oauth-types/${socialtype}`
             );
         } catch (error) {
             console.error("유효하지 않은 URL입니다!", error);
@@ -30,11 +29,11 @@ function LoginTemplate () {
                         <SocialButtonIcon src={kakaoLogo} alt="카카오 로고" className="social-icon"/>
                         카카오 로그인
                     </SocialLoginButton>
-                    <SocialLoginButton socialtype="naver" onClick={() => login(socialtype)}>
+                    <SocialLoginButton socialtype="naver" onClick={() => login('naver')}>
                         <SocialButtonIcon src={naverLogo} alt="네이버 로고" className="social-icon"/>
                         네이버 로그인
                     </SocialLoginButton>
-                    <SocialLoginButton socialtype="google" onClick={() => login(socialtype)}>
+                    <SocialLoginButton socialtype="google" onClick={() => login('google')}>
                         <SocialButtonIcon src={googleLogo} alt="구글 로고" className="social-icon"/>
                         &nbsp; 구글 로그인
                     </SocialLoginButton>
