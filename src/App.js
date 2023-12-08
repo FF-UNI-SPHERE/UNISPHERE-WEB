@@ -5,6 +5,7 @@ import MainScreen from './screen/MainScreen';
 import LoginScreen from './screen/LoginScreen';
 import GuideScreen from './screen/GuideScreen';
 import HomepageScreen from './screen/HomepageScreen';
+import ArticleScreen from './screen/ArticleScreen';
 
 class App extends React.Component {
   render() {
@@ -15,6 +16,7 @@ class App extends React.Component {
           <Route path="/login" element={<LoginScreen/>}/>
           <Route path="/guide" element={<GuideScreen/>}/>
           <Route path="/myhomepage" element={<HomepageScreen/>}/>
+          <Route path="/article" element={<ArticleScreen/>}/>
         </Routes>
       </Router>
     );

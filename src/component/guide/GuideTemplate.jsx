@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import MenuBar from '../common/MenuBar';
 import AlertBar from '../common/Alert';
 import { imglist, GuideContents } from './GuideContents.jsx';
-import GrayNavBar from "./GrayNavBar.jsx";
+import { GrayNavBar } from "./GrayNavBar.jsx";
 
 function GuideTemplate() {
     //4개 안내 섹션에 대한 각각의 ref 생성
@@ -45,6 +45,7 @@ function GuideTemplate() {
         <TranslucentBox>
             {/* GrayNavBar 컴포넌트에 setActiveRef 함수를 prop으로 전달. onNavClick은 그냥 매개변수 이름. */}
             <GrayNavBar 
+                title="이용안내"
                 onNavClick={setActiveRef}
                 refs={{mainRef, homePageRef, articleRef, plazaRef}}
                 getStyle={getButtonStyle}
@@ -85,4 +86,4 @@ const ContentsContainer = styled.div`
     margin-right: auto;
 `;
 
-export default GuideTemplate;
+export {GuideTemplate, TranslucentBox, ContentsContainer};
