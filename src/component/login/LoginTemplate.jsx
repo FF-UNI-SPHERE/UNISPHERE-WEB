@@ -11,7 +11,7 @@ function LoginTemplate () {
     const login = ({socialtype}) => {
         try {
             window.location.replace(
-                import.meta.env.VITE_BE_HOST + `/api/auth/${socialtype}/login`,
+                import.meta.env.REACT_APP_BE_HOST + `/api/v1/auth/login/oauth-types/${socialtype}`,
             );
         } catch (error) {
             console.error("유효하지 않은 URL입니다!", error);
@@ -26,7 +26,7 @@ function LoginTemplate () {
                 <h3>소셜 로그인으로 진행하세요</h3>
                 <HorizontalLine position="top"/>
                 <ButtonContainer >
-                    <SocialLoginButton socialtype="kakao" onClick={() => login(socialtype)}>
+                    <SocialLoginButton socialtype="kakao" onClick={() => login('kakao')}>
                         <SocialButtonIcon src={kakaoLogo} alt="카카오 로고" className="social-icon"/>
                         카카오 로그인
                     </SocialLoginButton>

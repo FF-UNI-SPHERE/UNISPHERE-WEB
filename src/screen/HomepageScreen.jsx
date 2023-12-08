@@ -51,6 +51,7 @@ const HomepagePosition = styled.div`
     flex-direction: column;
     width: 100vw;
     height: 100vh;
+    position: relative;
 `;
 
 const WhiteBox = styled.div`
@@ -121,7 +122,7 @@ const ButtonOne = styled.button`
   border: none;
   border-radius: 20px 20px 0 0;
   position: absolute;
-  z-index: 3; // 컴포넌트 상대적으로 배치
+  z-index: 2; // 컴포넌트 상대적으로 배치
   top: 34vh;
   left: 17vw;
   font-family: 'Godo', sans-serif;
@@ -133,6 +134,7 @@ const ButtonOne = styled.button`
   &:hover,
   &:focus {
     opacity: 100%;
+    z-index: 2; // 버튼 위에 마우스 올리면 white box 위로 올라오게 설정
   }
   // 고도체
   @font-face {  
@@ -164,6 +166,7 @@ const ButtonTwo = styled.button`
   &:hover,
   &:focus {
     opacity: 100%;
+    z-index: 2; // 버튼 위에 마우스 올리면 white box 위로 올라오게 설정
   }
 `;
 
