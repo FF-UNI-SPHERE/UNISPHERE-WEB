@@ -82,7 +82,7 @@ const SideBar = styled.div`
   left: 0;
   top: 0;
 
-  background: rgba(255, 255, 255, 0.50);
+  background: rgba(255, 255, 255, 0.8);
   display: flex;
   flex-direction: column;
 
