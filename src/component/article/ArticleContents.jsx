@@ -1,61 +1,62 @@
 import React from "react";
 import styled from 'styled-components';
-import { ContentsContainer } from "../guide/GuideTemplate";
-import cardOcean from "../resource/card_ocean.png"
+// import { ContentsContainer } from "../guide/GuideTemplate";
+import cardOcean from "../resource/card_ocean.jpg"
+import cardHomeless from "../resource/card_homeless.jpg"
+import cardLight from "../resource/card_light.png"
+import ArticleCard from "./ArticleCard";
 
 function ArticleContents() {
+    const oceanlink = "https://www.ohmynews.com/NWS_Web/Series/series_premium_pg.aspx?CNTN_CD=A0002846891";
     return (
-        <ContentsContainer>
-            <CardNews 
+        <CardsContainer>
+            <ArticleCard
+                width="50vw"
+                imgheight="36vh"
                 image={cardOcean}
-                title="해안가에 밀려온 쓰레기들, 누구의 잘못일까?"
+                title="태평양의 위험한 섬, 없애지 않으면 인류 위기"
                 date="2023/11/07"
-                organization="KOICA"
+                reporter="KOICA"
+                // ref={oceanlink}
             />
-        </ContentsContainer>
+            <SubCardsContainer>
+                <ArticleCard 
+                    width="35vw"
+                    imgheight="12vh"
+                    image={cardHomeless}
+                    title="길거리로 떠밀리는 청소년들"
+                    date="2023/08/20"
+                    reporter="OOO"
+                />
+                <ArticleCard
+                    width="35vw"
+                    imgheight="12vh"
+                    image={cardLight}
+                    title="화려한 도심의 불빛과 빛 공해에 대하여"
+                    date="2023/10/17"
+                    reporter="XXX"
+                />
+            </SubCardsContainer>
+        </CardsContainer>
     );
 }
 
-const CardNews = ({image, title, date, organization}) => (
-    <CardWrapper>
-        <Image src={image} alt="NewsThumbnail" />
-        <DescriptionWrapper>
-            <Title>{title}</Title>
-            <Date>{date}</Date>
-            <p>주최자: {organization}</p>
-        </DescriptionWrapper>
-    </CardWrapper>
-);
-
-const CardWrapper = styled.div`
-    width: 30vw;
-    border: 1px solid #ddd;
-    border-radius: 1vw;
-    overflow: hidden;
-    margin: 2vh 1vw;
-    box-shadow: 0.2vw 0.2vh 0.4vw rgba(0,0,0,0.1);
-`
-
-const Image = styled.img`
-    width: 100%;
-    height: 20vh;
-    object-fit: cover;
+const CardsContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1vh;
+    align-items: center;
 `;
 
-const DescriptionWrapper = styled.div`
-    padding: 2vh 2vw;
-`;
-
-const Title = styled.h3`
-    margin: 0;
-    color: #333;
-    font-size: 1.4vh;
-`
-
-const Date = styled.p`
-    margin: 1vh 0 0 0;
-    color: #666;
-    font-size: 1.2vh;
+const SubCardsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 55vh;
 `;
 
 export default ArticleContents;
