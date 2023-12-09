@@ -25,7 +25,12 @@ function LeftSideBar({isOpen}) {
   }, [isOpen]);
 
   const moveToPage = (link) => {
-    window.location.href = `/${link}`;
+    if(link === "plaza") {
+      window.location.href ="https://zep.us/play/87zbJV";
+    }
+    else {
+      window.location.href = `/${link}`;
+    }
   };
 
   return (
@@ -55,6 +60,7 @@ function LeftSideBar({isOpen}) {
           <SubItemBtn>모든 단체 보기</SubItemBtn>
         </SubItemContents> 
       )}
+      <SideBarItems onToggle={() => {moveToPage(" ")}} children="메인 화면" />
     </SideBar>
   );
 }
