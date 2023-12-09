@@ -25,9 +25,7 @@ function LeftSideBar({isOpen}) {
   }, [isOpen]);
 
   const moveToPage = (link) => {
-    window.location.replace(
-      `/${link}`
-    );
+    window.location.href = `/${link}`;
   };
 
   return (
