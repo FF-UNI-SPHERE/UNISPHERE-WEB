@@ -72,6 +72,7 @@ const NavButton = styled.button`
     border: 0;
     &:hover {
         cursor: pointer;
+        color: #FFF;
     }
 `;
 

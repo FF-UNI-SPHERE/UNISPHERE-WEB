@@ -22,9 +22,9 @@ function GuideTemplate() {
             console.log("작동하지 않습니다");
         }
     };
-
+    
     const getButtonStyle = (ref) => ({
-        color: ref === activeRef ? 'white' : 'initial'
+        // color: ref === activeRef ? 'white' : 'initial'
     });
 
     useEffect(() => {
