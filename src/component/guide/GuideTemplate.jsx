@@ -74,13 +74,12 @@ const TranslucentBox = styled.div`
 
     background-color: rgba(255, 255, 255, 0.90);
     border-radius: 1rem 1rem 0 0;
-    /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
 
 `;
 
 const ContentsContainer = styled.div`
-    overflow-y: auto;
-    height: 40rem;
+    overflow: auto;
+    height: calc(100% - 15vh);
     width: 90%;
     margin-left: auto;
     margin-right: auto;

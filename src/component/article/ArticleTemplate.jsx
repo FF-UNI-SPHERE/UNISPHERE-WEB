@@ -57,10 +57,10 @@ function Pagenation() {
     return (
         <PagenationContainer>
             <PagenationButton>1</PagenationButton>
-            <PagenationButton>2</PagenationButton>
+            {/* <PagenationButton>2</PagenationButton>
             <PagenationButton>3</PagenationButton>
             <PagenationButton>4</PagenationButton>
-            <PagenationButton>5</PagenationButton>
+            <PagenationButton>5</PagenationButton> */}
         </PagenationContainer>
     );
 }
