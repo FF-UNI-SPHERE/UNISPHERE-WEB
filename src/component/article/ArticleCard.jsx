@@ -1,8 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ArticleCard = ({width, imgheight, image, title, date, reporter}) => (
-    <CardWrapper $width={width}>
+function ArticleCard({width, imgheight, image, title, date, reporter}) {
+    const oceanlink = "https://www.ohmynews.com/NWS_Web/Series/series_premium_pg.aspx?CNTN_CD=A0002846891";
+
+    const handlePopup = () => {
+        const popup = window.open(oceanlink, 'CardNews', 'width=800, height=600');
+    }
+
+    return (
+    <CardWrapper $width={width} onClick={handlePopup}>
         <ImageDiv $height={imgheight} src={image} alt="NewsThumbnail" />
         <DescriptionWrapper>
             <TitleText>{title}</TitleText>
@@ -12,9 +19,12 @@ const ArticleCard = ({width, imgheight, image, title, date, reporter}) => (
             </SubTextContainer>
         </DescriptionWrapper>
     </CardWrapper>
-);
+    );
+}
 
-const CardWrapper = styled.div`
+const CardWrapper = styled.button`
+    all: unset;
+
     width: ${({$width}) => $width};
     height: 80%;
     border: 1px solid #ddd;

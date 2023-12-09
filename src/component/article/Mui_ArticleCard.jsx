@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Card as MuiCard, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
 import cardOcean from "../resource/card_ocean.png"
 
-const ArticleCard = ({height, image}) => {
+const ArticleCard = ({height, image, link}) => {
     return (
     <StyledCard>
         <CardActionArea>

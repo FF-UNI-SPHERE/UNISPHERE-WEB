@@ -1,13 +1,13 @@
 import React from "react";
 import styled from 'styled-components';
-// import { ContentsContainer } from "../guide/GuideTemplate";
 import cardOcean from "../resource/card_ocean.jpg"
 import cardHomeless from "../resource/card_homeless.jpg"
 import cardLight from "../resource/card_light.png"
 import ArticleCard from "./ArticleCard";
 
 function ArticleContents() {
-    const oceanlink = "https://www.ohmynews.com/NWS_Web/Series/series_premium_pg.aspx?CNTN_CD=A0002846891";
+    // const oceanlink = "https://www.ohmynews.com/NWS_Web/Series/series_premium_pg.aspx?CNTN_CD=A0002846891";
+
     return (
         <CardsContainer>
             <ArticleCard
@@ -17,7 +17,7 @@ function ArticleContents() {
                 title="태평양의 위험한 섬, 없애지 않으면 인류 위기"
                 date="2023/11/07"
                 reporter="KOICA"
-                // ref={oceanlink}
+                // link={oceanlink}
             />
             <SubCardsContainer>
                 <ArticleCard 
