@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FiMenu } from "react-icons/fi";
+import LeftSideBar from "./LeftSideBar";
 
 // 화면 최상단에 위치한 전체 메뉴 바
 function MenuBar({ EnterPrise }) {
@@ -26,17 +27,26 @@ const Menus = styled.div`
 // LNB
 function LeftNavigationBar({}) {
   const [isMenuHovered, setIsMenuHovered] = useState(false);  // 버튼 hover 여부
+  const [isSideBarOpen, setIsSideBarOpen] = useState(false);  // 버튼 클릭 여부
+
+  const toggleSideBar = () => {
+    setIsSideBarOpen(!isSideBarOpen);
+  };
 
   return (
-    <LeftNavigationButton
-      onMouseOver={() => setIsMenuHovered(true)}
-      onMouseOut={() => setIsMenuHovered(false)}
-    >
-      <FiMenu 
-        size='40px'
-        color={ isMenuHovered ? 'white' : 'black' }
-      />
-    </LeftNavigationButton>
+    <>
+      <LeftNavigationButton
+        onMouseOver={() => setIsMenuHovered(true)}
+        onMouseOut={() => setIsMenuHovered(false)}
+        onClick={toggleSideBar}
+      >
+        <FiMenu 
+            size='40px'
+            color={ isMenuHovered ? 'white' : 'black' }
+        />
+      </LeftNavigationButton>
+      <LeftSideBar isOpen={isSideBarOpen}/>
+    </>
   );
 }
 
@@ -48,6 +58,7 @@ const LeftNavigationButton = styled.button`
   position: relative;
   justify-content: flex-start;
   cursor: pointer;
+  z-index: 3000;
 
   &:active,
   &:hover {
@@ -63,12 +74,22 @@ function RightNavigationBar({ EnterPrise }) {
     <Navs>
       <Logout>로그아웃</Logout>
       <Bar>|</Bar>
-      <Plaza>소통의 광장</Plaza>
+      <Plaza onClick={()=>{moveToPage("plaza")}}>소통의 광장</Plaza>
       <Bar>|</Bar>
-      <EnterprisePage>{EnterPrise} 홈페이지</EnterprisePage>
+      <EnterprisePage onClick={()=>{moveToPage("kcoc")}}>{EnterPrise} 홈페이지</EnterprisePage>
     </Navs>
   );
 }
+
+// RNB 페이지 이동
+const moveToPage = (link) => {
+  if(link === "plaza") {
+    window.location.href ="https://zep.us/play/87zbJV";
+  }
+  else if(link === "kcoc") {
+    window.location.href ="http://www.ngokcoc.or.kr";
+  }
+};
 
 const Navs = styled.div`
   width: 31vw;

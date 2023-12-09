@@ -1,5 +1,5 @@
 import React from 'react';
-import GuideTemplate from "../component/guide/GuideTemplate";
+import { GuideTemplate } from "../component/guide/GuideTemplate";
 
 function GuideScreen() {
     return (

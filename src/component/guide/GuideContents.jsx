@@ -20,7 +20,7 @@ const GuideContents = forwardRef(({detail, img, name}, ref) => {
         <ContentBox ref={ref}>
             <h4>{name}</h4>
             <pre>{detail}</pre>
-            <div>
+            <div style={{height: 'auto', marginBottom: '5vh'}} >
                 <GuideImage src={img.first} alt="First"/>
                 { img.second === null ? null : <GuideImage src={img.second} alt="Second"/>}
             </div>
@@ -34,6 +34,7 @@ const ContentBox = styled.div`
     margin-top: 2vh;
     margin-bottom: 2vh;
     h4 {
+        margin-top:0;
         color: #000;
         font-size: 1.875rem;
         font-style: normal;

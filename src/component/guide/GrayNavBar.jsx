@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import React, { useRef, useEffect, useState } from "react";
 
-function GrayNavBar({onNavClick, refs, getStyle}) {
+function GrayNavBar({title, onNavClick, refs, getStyle}) {
     return (
         <GrayBox>
-            <h3>이용안내</h3>
+            <h3>{title}</h3>
             <NavButtonContainer>
                 <NavButton onClick={()=>{onNavClick(refs.mainRef)}} style={getStyle(refs.mainRef)}>개인/단체 아바타</NavButton>
                 <span>|</span>
@@ -72,7 +72,8 @@ const NavButton = styled.button`
     border: 0;
     &:hover {
         cursor: pointer;
+        color: #FFF;
     }
 `;
 
-export default GrayNavBar;
+export {GrayNavBar, GrayBox};

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import MenuBar from '../common/MenuBar';
 import AlertBar from '../common/Alert';
 import { imglist, GuideContents } from './GuideContents.jsx';
-import GrayNavBar from "./GrayNavBar.jsx";
+import { GrayNavBar } from "./GrayNavBar.jsx";
 
 function GuideTemplate() {
     //4개 안내 섹션에 대한 각각의 ref 생성
@@ -22,9 +22,9 @@ function GuideTemplate() {
             console.log("작동하지 않습니다");
         }
     };
-
+    
     const getButtonStyle = (ref) => ({
-        color: ref === activeRef ? 'white' : 'initial'
+        // color: ref === activeRef ? 'white' : 'initial'
     });
 
     useEffect(() => {
@@ -45,6 +45,7 @@ function GuideTemplate() {
         <TranslucentBox>
             {/* GrayNavBar 컴포넌트에 setActiveRef 함수를 prop으로 전달. onNavClick은 그냥 매개변수 이름. */}
             <GrayNavBar 
+                title="이용안내"
                 onNavClick={setActiveRef}
                 refs={{mainRef, homePageRef, articleRef, plazaRef}}
                 getStyle={getButtonStyle}
@@ -73,16 +74,15 @@ const TranslucentBox = styled.div`
 
     background-color: rgba(255, 255, 255, 0.90);
     border-radius: 1rem 1rem 0 0;
-    /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
 
 `;
 
 const ContentsContainer = styled.div`
-    overflow-y: auto;
-    height: 40rem;
+    overflow: auto;
+    height: calc(100% - 15vh);
     width: 90%;
     margin-left: auto;
     margin-right: auto;
 `;
 
-export default GuideTemplate;
+export {GuideTemplate, TranslucentBox, ContentsContainer};

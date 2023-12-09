@@ -8,7 +8,7 @@ function Avatar(props) {
       marginTop: props.marginTop, 
     }}>
       <img src={props.src} width={props.width} alt='ch'/>
-      <name>{props.name}</name>
+      <h3>{props.name}</h3>
     </IsAvatar>
   );
 }
@@ -21,7 +21,7 @@ const IsAvatar = styled.div`
   display: flex;
   flex-direction: column;
   // 캐릭터의 이름
-  name {
+  h3 {
     text-align: center;
     align-content: center;
     font-family: 'Godo', sans-serif;
