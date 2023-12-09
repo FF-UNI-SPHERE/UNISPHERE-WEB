@@ -35,7 +35,7 @@ function LeftSideBar({isOpen}) {
       <SideBarItems onToggle={() => toggleItem(1)} children="유니스피어" />
       {(toggleStates[1]) && (
         <SubItemContents>
-          <SubItemBtn>플랫폼 소개</SubItemBtn>
+          <SubItemBtn onClick={()=>{moveToPage("intro")}}>플랫폼 소개</SubItemBtn>
           <SubItemBtn onClick={()=>{moveToPage("guide")}}>이용 안내</SubItemBtn>
           <SubItemBtn>공지 사항</SubItemBtn>
         </SubItemContents> 
