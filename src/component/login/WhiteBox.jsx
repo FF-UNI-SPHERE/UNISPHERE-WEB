@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
 const WhiteBox  = styled.div`
+    justify-Content: 'center';
     width: 55%;
     height: auto;
     padding: 2% 5% 3% 5%;
+    margin: auto;
     border-radius: 30px;
     background-color: var(--white);
     h1 {
