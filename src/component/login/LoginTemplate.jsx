@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import naverLogo from '../resource/logo_naver.png';
 import kakaoLogo from '../resource/logo_kakao.png';
 import googleLogo from '../resource/logo_google.png';
-
+import BackBar from '../common/BackBar.jsx';
 import WhiteBox from './WhiteBox'
 
 function LoginTemplate() {
@@ -18,13 +18,13 @@ function LoginTemplate() {
   };
 
   return (
-    //align-items: center -> 적용이 안되는 문제로 우선 삭제
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
-      <WhiteBox >
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%' }}>
+      <BackBar/>
+      <WhiteBox>
         <h1 className="title">로그인하기</h1>
         <h3>소셜 로그인으로 진행하세요</h3>
         <HorizontalLine position="top" />
-        <ButtonContainer >
+        <ButtonContainer>
           <SocialLoginButton socialtype="kakao" onClick={() => login('kakao')}>
             <SocialButtonIcon src={kakaoLogo} alt="카카오 로고" className="social-icon" />
             카카오 로그인
@@ -37,11 +37,11 @@ function LoginTemplate() {
             <SocialButtonIcon src={googleLogo} alt="구글 로고" className="social-icon" />
             &nbsp; 구글 로그인
           </SocialLoginButton>
-        </ButtonContainer >
+        </ButtonContainer>
         <HorizontalLine position="top" />
         {/* <HorizontalLine position="bottom"/>
                 <SignInButton >회원가입하기</SignInButton > */}
-      </WhiteBox >
+      </WhiteBox>
     </div>
   );
 };

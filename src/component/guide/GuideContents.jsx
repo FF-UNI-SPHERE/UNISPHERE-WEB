@@ -20,7 +20,7 @@ const GuideContents = forwardRef(({detail, img, name}, ref) => {
         <ContentBox ref={ref}>
             <h4>{name}</h4>
             <pre>{detail}</pre>
-            <div style={{height: 'auto', marginBottom: '5vh'}} >
+            <div style={{ height: 'auto', marginBottom: '5vh' }} >
                 <GuideImage src={img.first} alt="First"/>
                 { img.second === null ? null : <GuideImage src={img.second} alt="Second"/>}
             </div>
