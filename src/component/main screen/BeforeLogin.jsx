@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 import Button from './ButtonSet.jsx'
 import Avatar from '../common/Avatar.jsx';
 import logoRoot from '../resource/unisphere_logo.png';
@@ -7,15 +8,29 @@ import chRoot from '../resource/avatar_unisphere.png';
 
 /* 사용자가 로그인하기 전 화면 배치 */
 function BeforeLoginSet() {
+  const navigate = useNavigate();
+
+  const navigateToLogin = () => {
+    navigate('/login');
+  };
+  
+  const navigateToGuide = () => {
+    navigate('/guide');
+  }
+
+  const navigateToArticle = () => {
+    navigate('/article');
+  }
+
   return (
     <MainScreenPosition>
       <LogoPart>
         <img src={logoRoot} alt="logo"/>
       </LogoPart>
       <ButtonPart>
-        <Button children='로그인 / 회원가입'></Button>
-        <Button children='이용 안내'></Button>
-        <Button children='뉴스 레터'></Button>
+        <Button children='로그인 / 회원가입' onClickFunction={navigateToLogin}></Button>
+        <Button children='이용 안내' onClickFunction={navigateToGuide}></Button>
+        <Button children='뉴스 레터' onClickFunction={navigateToArticle}></Button>
       </ButtonPart>
       <BubblePart>
         <text>

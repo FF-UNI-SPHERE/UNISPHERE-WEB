@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
-function Button({ children, onClick }) {
-  return (<div><StyledButton>{children}</StyledButton></div>);
+function Button({ children, onClickFunction }) {
+  return (<div><StyledButton onClick={onClickFunction}>{children}</StyledButton></div>);
 }
 
 const StyledButton = styled.button`
@@ -20,8 +19,7 @@ const StyledButton = styled.button`
   
   cursor: pointer;
   &:active,
-  &:hover,
-  &:focus {
+  &:hover {
     background: var(--button-hover-bg-color, #5e5e5e);
   }
   // 고도체
