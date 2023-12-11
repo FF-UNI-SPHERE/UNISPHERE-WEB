@@ -74,15 +74,17 @@ const TranslucentBox = styled.div`
 
     background-color: rgba(255, 255, 255, 0.90);
     border-radius: 1rem 1rem 0 0;
-
+    position: absolute;
 `;
 
 const ContentsContainer = styled.div`
     overflow: auto;
     height: calc(100% - 15vh);
-    width: 90%;
+    width: 83vw;
+    height: 65vh;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
 `;
 
 export {GuideTemplate, TranslucentBox, ContentsContainer};
