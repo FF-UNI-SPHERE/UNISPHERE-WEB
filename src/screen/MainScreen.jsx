@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React from 'react';
 import BeforeLoginSet from '../component/main screen/BeforeLogin';
 import AfterLoginSet from '../component/main screen/AfterLogin';
 import { getCookie } from '../api/cookie';
