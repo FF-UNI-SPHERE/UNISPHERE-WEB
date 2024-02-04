@@ -34,11 +34,14 @@ function IntroTemplate() {
           />
           <TextPart>
             <icon><img src={handiconRoot} width='30px' style={{marginRight: '10px'}}/></icon>
-            <h1>우리 플랫폼의 목적</h1>
-            <main>개발도상국의 빈곤감소 및 삶의 질 향상, 여성, 아동, 장애인, 청소년의 인권향상, 성평등 실현, 지속가능한 발전 및 인도주의를 실현하고, 협력대상국과의 경제 협력 및 우호협력관계 증진, 국제사회의 평화와 번영에 기여함.</main>
+            <h1>UniSphere의 뜻은?</h1>
+            <main>1. Unity + Sphere</main>
+            <main>2. 국경을 넘는 우정과 협력의 첫 걸음</main>
+          </TextPart>
+          <TextPart>
             <icon><img src={handiconRoot} width='30px' style={{marginRight: '10px'}}/></icon>
-            <h1>이렇게 사용해보세요!</h1>
-            <main>홈페이지에 접속하면, 홈페이지 소개와 공지사항을 확인할 수 있습니다.</main>
+            <h1>UniSphere 플랫폼의 목적은?</h1>
+            <main>청년 단체들의 교류 활성화를 촉진시키고, 국제 개발 협력에 관련한 정보들을 취합하여 한 눈에 볼 수 있게 하는 웹 플랫폼 제공.</main>
           </TextPart>
         </WhiteBox>
       </HomepagePosition>
@@ -171,11 +174,11 @@ function IntroTemplate() {
   
   const TextPart = styled.div`
     width: 50vw;
-    height: 50vh;
+    height: 23vh;
     border: none;
     position: relative;
     left: 26vw;
-    top: 4vh;
+    top: 5vh;
   
     h1 {
       font-family: 'Malgun Gothic', sans-serif;
@@ -187,9 +190,9 @@ function IntroTemplate() {
   
     main {
       font-family: 'Malgun Gothic', sans-serif;
-      font-weight: 300;
+      font-weight: 500;
       font-size: 18px;
-      padding: 0 14px 40px 14px;
+      padding: 0 0 2.5vh 3vw;
     }
   
     icon {

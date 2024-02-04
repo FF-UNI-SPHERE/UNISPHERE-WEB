@@ -1,22 +1,22 @@
-import React, {useState, useEffect} from 'react';
-import styled from 'styled-components';
-import unisphereHand from '../resource/unisphere_logo_hand.png';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import unisphereHand from "../resource/unisphere_logo_hand.png";
 
-function LeftSideBar({isOpen}) {
+function LeftSideBar({ isOpen }) {
   const [toggleStates, setToggleStates] = useState({});
-  
+
   const toggleItem = (idx) => {
-    setToggleStates(prevState => ({
+    setToggleStates((prevState) => ({
       ...prevState,
-      [idx]: !prevState[idx]
+      [idx]: !prevState[idx],
     }));
   };
 
   useEffect(() => {
-    if(!isOpen) {
-      setToggleStates(prevState => {
+    if (!isOpen) {
+      setToggleStates((prevState) => {
         const newState = {};
-        for(const key in prevState) {
+        for (const key in prevState) {
           newState[key] = false;
         }
         return newState;
@@ -25,10 +25,9 @@ function LeftSideBar({isOpen}) {
   }, [isOpen]);
 
   const moveToPage = (link) => {
-    if(link === "plaza") {
-      window.location.href ="https://zep.us/play/87zbJV";
-    }
-    else {
+    if (link === "plaza") {
+      window.location.href = "https://zep.us/play/87zbJV";
+    } else {
       window.location.href = `/${link}`;
     }
   };
@@ -36,36 +35,71 @@ function LeftSideBar({isOpen}) {
   return (
     <SideBar $isopen={isOpen}>
       <SideBarItems onToggle={() => toggleItem(1)} children="유니스피어" />
-      {(toggleStates[1]) && (
+      {toggleStates[1] && (
         <SubItemContents>
-          <SubItemBtn onClick={()=>{moveToPage("intro")}}>플랫폼 소개</SubItemBtn>
-          <SubItemBtn onClick={()=>{moveToPage("guide")}}>이용 안내</SubItemBtn>
+          <SubItemBtn
+            onClick={() => {
+              moveToPage("intro");
+            }}
+          >
+            플랫폼 소개
+          </SubItemBtn>
+          <SubItemBtn
+            onClick={() => {
+              moveToPage("guide");
+            }}
+          >
+            이용 안내
+          </SubItemBtn>
           <SubItemBtn>공지 사항</SubItemBtn>
-        </SubItemContents> 
+        </SubItemContents>
       )}
       <SideBarItems onToggle={() => toggleItem(2)} children="뉴스 레터" />
-      {(toggleStates[2]) && (
+      {toggleStates[2] && (
         <SubItemContents>
-          <SubItemBtn onClick={()=>{moveToPage("article")}}>이달의 소식지</SubItemBtn>
+          <SubItemBtn
+            onClick={() => {
+              moveToPage("article");
+            }}
+          >
+            이달의 소식지
+          </SubItemBtn>
           <SubItemBtn>소식지 투고</SubItemBtn>
           <SubItemBtn>광고 문의</SubItemBtn>
-        </SubItemContents> 
+        </SubItemContents>
       )}
       <SideBarItems children="기부 / 모금" />
       <SideBarItems onToggle={() => toggleItem(3)} children="단체 활동" />
-      {(toggleStates[3]) && (
+      {toggleStates[3] && (
         <SubItemContents>
-          <SubItemBtn onClick={()=>{moveToPage("myhomepage")}}>단체 홈페이지</SubItemBtn>
-          <SubItemBtn onClick={()=>{moveToPage("plaza")}}>소통의 광장</SubItemBtn>
+          <SubItemBtn
+            onClick={() => {
+              moveToPage("myhomepage");
+            }}
+          >
+            단체 홈페이지
+          </SubItemBtn>
+          <SubItemBtn
+            onClick={() => {
+              moveToPage("plaza");
+            }}
+          >
+            소통의 광장
+          </SubItemBtn>
           <SubItemBtn>모든 단체 보기</SubItemBtn>
-        </SubItemContents> 
+        </SubItemContents>
       )}
-      <SideBarItems onToggle={() => {moveToPage(" ")}} children="메인 화면" />
+      <SideBarItems
+        onToggle={() => {
+          moveToPage(" ");
+        }}
+        children="메인 화면"
+      />
     </SideBar>
   );
 }
 
-const SideBarItems = ({onToggle, children}) => {
+const SideBarItems = ({ onToggle, children }) => {
   return (
     <SideBarItemBtn onClick={onToggle}>
       <img src={unisphereHand} alt="UniSphereHand" />
@@ -86,7 +120,8 @@ const SideBar = styled.div`
   display: flex;
   flex-direction: column;
 
-  transform: ${({$isopen}) => $isopen ? 'translateX(0)' : 'translateX(-100%)'};
+  transform: ${({ $isopen }) =>
+    $isopen ? "translateX(0)" : "translateX(-100%)"};
   transition: transform 0.3s ease-in-out;
   z-index: 2000;
 `;
@@ -117,7 +152,7 @@ const SideBarItemBtn = styled.button`
     margin-top: 1.15rem;
   }
   &:hover {
-    color: #FFF;
+    color: #fff;
   }
 `;
 
@@ -126,10 +161,11 @@ const SubItemContents = styled.div`
   height: 13vh;
   display: flex;
   flex-direction: column;
+  font-family: "Godo", sans-serif;
 `;
 
 const SubItemBtn = styled.button`
-  width: 6.875rem;
+  width: 10rem;
   height: 1.8rem;
   font-size: 1rem;
   font-weight: 400;
@@ -145,7 +181,7 @@ const SubItemBtn = styled.button`
   border: none;
   cursor: pointer;
   &:hover {
-    color: #FFF;
+    color: #fff;
   }
 `;
 
