@@ -36,13 +36,25 @@ var ctx = canvas.getContext("2d");
 combineImages([
 
 { src: "test/LeftArm_4.png", x: BASE_X - 2, y: BASE_Y + 14 },
-{ src: "test/Legs_5.png", x: BASE_X + 2, y: BASE_Y + 21 },
+{ src: "clothes/top/Cloth_5_la.png", x: BASE_X - 2, y: BASE_Y + 14 },
+
+{ src: "test/Legs_5.png", x: BASE_X + 2, y: BASE_Y + 19 },
+{ src: "clothes/pants/Foot_1.png", x: BASE_X + 2, y: BASE_Y + 19 },
+
+
 { src: "test/Body_3.png", x: BASE_X + 1, y: BASE_Y + 14 },
+{ src: "clothes/top/Cloth_5_m.png", x: BASE_X + 1, y: BASE_Y + 14 },
+
 { src: "test/RightArm_2.png", x: BASE_X + 10, y: BASE_Y + 14 },
+{ src: "clothes/top/Cloth_5_ra.png", x: BASE_X + 10, y: BASE_Y + 14 },
 // { src: "hair/Hair_1.png", x: BASE_X - 7, y: BASE_Y - 13},
 { src: "test/Head_1.png", x: BASE_X, y: BASE_Y },
-{ src: "eyes/Eye_Back.png", x: BASE_X+3, y: BASE_Y+6},
-{ src: "eyes/Eye_Back.png", x: BASE_X+9, y: BASE_Y+6},
-{ src: "hair/Hair_9.png", x: BASE_X - 7, y: BASE_Y - 13},
+{ src: "default/eyes/Eye_Back.png", x: BASE_X+3, y: BASE_Y+8},
+{ src: "change_color/Eye/Eye_Front_FF0000.png", x: BASE_X+3, y: BASE_Y+8.8},
+{ src: "default/eyes/Eye_Back.png", x: BASE_X+8, y: BASE_Y+8},
+{ src: "change_color/Eye/Eye_Front_FF0000.png", x: BASE_X+8, y: BASE_Y+8.8},
+{ src: "change_color/Hair/Hair_8_FFC0CB.png", x: BASE_X - 7, y: BASE_Y - 13},
 
 ]);
+//4E342E
+//FFC0CB
