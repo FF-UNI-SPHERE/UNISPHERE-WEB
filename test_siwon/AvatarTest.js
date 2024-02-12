@@ -43,6 +43,13 @@ const scale = 6;
 let canvas = document.getElementById("avatarCanvas");
 let ctx = canvas.getContext("2d");
 
+//버튼에 대한 변수들
+const exportButton = document.querySelector('#export');
+const hairChangeButton = document.querySelector('#hair-change');
+const eyeColorChangeButton = document.querySelector('#eye-color-change');
+const clothTopChangeButton = document.querySelector('#cloth-top-change');
+const clothPantChangeButton = document.querySelector('#cloth-pant-change');
+
 //배율 6배 기준
 const offsets = new Map([
   ['head', {offsetX: 0, offsetY: 0}],
@@ -80,7 +87,9 @@ let imageObjects = [
 
 combineImages(applyOffsets(BASE_X, BASE_Y, imageObjects, offsets), scale)
 
-document.getElementById('export').addEventListener('click', () => {
+
+//버튼 이벤트 리스너들
+exportButton.addEventListener('click', () => {
   // 캔버스 내용을 이미지로 변환
   const exportImg = canvas.toDataURL();
   //다운로드를 위한 a 태그 생성
@@ -89,3 +98,10 @@ document.getElementById('export').addEventListener('click', () => {
   link.download = 'avatar-image.png';
   link.click();
 });
+
+// hairChangeButton.addEventListener('click', () => {
+//   imageObjects.forEach(function(obj) {
+//     if (obj.type === 'hair') src = "change_"
+//   })
+// });
+
