@@ -1,3 +1,6 @@
+import {} from './puTest.js';
+// import { v4 as uuidv4 } from 'uuid';
+
 //이미지 그리는 함수
 function combineImages(imageObjects, scale) {
     // 이미지 로드를 위한 프로미스 생성
@@ -22,7 +25,7 @@ function combineImages(imageObjects, scale) {
         console.log(`loadedImg:${loadedImg}, ImgX:${loadedImg.x}, ImgY:${loadedImg.y}`)
       });
     });
-  }
+}
 
 //각 이미지 타입에 따른 세부 위치 조정 함수
 function applyOffsets(baseX, baseY, objects, offsetsMap) {
@@ -92,12 +95,15 @@ combineImages(applyOffsets(BASE_X, BASE_Y, imageObjects, offsets), scale)
 //버튼 이벤트 리스너들
 exportButton.addEventListener('click', () => {
   // 캔버스 내용을 이미지로 변환
-  const exportImg = canvas.toDataURL();
-  //다운로드를 위한 a 태그 생성
-  const link = document.createElement('a');
-  link.href = exportImg;
-  link.download = 'avatar-image.png';
-  link.click();
+  // const exportImg = canvas.toDataURL();
+  // //다운로드를 위한 a 태그 생성
+  // const link = document.createElement('a');
+  // link.href = exportImg;
+  // link.download = 'avatar-image.png';
+  // link.click();
+  const exportImg = canvas.toDataURL("image/png"); // 캔버스 내용을 PNG 이미지로 변환
+  setImageUrl(exportImg);
+  puTest(exportImg); // 변환된 이미지 데이터를 puTest 함수에 전달
 });
 
 hairChangeButton.addEventListener('click', () => {
@@ -190,3 +196,7 @@ clothPantChangeButton.addEventListener('click', () => {
     }
   });
 });
+
+const myButton = document.getElementById('puCheck');
+myButton.addEventListener('click', putest);
+

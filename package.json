@@ -16,6 +16,7 @@
     "react-scripts": "5.0.1",
     "react-social-login-buttons": "^3.9.1",
     "styled-components": "^6.1.1",
+    "uuid": "^9.0.1",
     "web-vitals": "^3.5.0"
   },
   "scripts": {
@@ -40,6 +41,8 @@
   "devDependencies": {
     "babel-plugin-styled-components": "^2.1.4",
     "customize-cra": "^1.0.0",
-    "react-app-rewired": "^2.2.1"
+    "react-app-rewired": "^2.2.1",
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4"
   }
 }
