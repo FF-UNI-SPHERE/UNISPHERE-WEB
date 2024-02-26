@@ -1,7 +1,7 @@
-import {} from './puTest.js';
-// import { v4 as uuidv4 } from 'uuid';
+import { getPresignedURL } from './UploadImage.js';
 
-//이미지 그리는 함수
+//--------------------------------이미지 그리는 함수들-------------------------------------//
+
 function combineImages(imageObjects, scale) {
     // 이미지 로드를 위한 프로미스 생성
     var loadPromises = imageObjects.map((imgObj) => {
@@ -39,6 +39,8 @@ function applyOffsets(baseX, baseY, objects, offsetsMap) {
   });
 }
 
+//--------------------------------이미지 그릴 때 필요한 변수들-------------------------------------//
+
 const BASE_X = 50;
 const BASE_Y = 50;
 const scale = 6;
@@ -48,6 +50,7 @@ let ctx = canvas.getContext("2d");
 
 //버튼에 대한 변수들
 const exportButton = document.querySelector('#export');
+const uploadImageButton = document.querySelector('#upload-image');
 const hairChangeButton = document.querySelector('#hair-change');
 const hairColorChangeButton = document.querySelector('#hair-color-change');
 const eyeColorChangeButton = document.querySelector('#eye-color-change');
@@ -89,22 +92,30 @@ let imageObjects = [
   { type: 'hair', src: "change_color/Hair/Hair_1_9.png"}
 ]
 
+//함수 호출하여 캔버스에 그리는 코드
 combineImages(applyOffsets(BASE_X, BASE_Y, imageObjects, offsets), scale)
 
 
-//버튼 이벤트 리스너들
+//-------------------------------버튼 이벤트 리스너들--------------------------------------------//
+
 exportButton.addEventListener('click', () => {
-  // 캔버스 내용을 이미지로 변환
-  // const exportImg = canvas.toDataURL();
-  // //다운로드를 위한 a 태그 생성
-  // const link = document.createElement('a');
-  // link.href = exportImg;
-  // link.download = 'avatar-image.png';
-  // link.click();
-  const exportImg = canvas.toDataURL("image/png"); // 캔버스 내용을 PNG 이미지로 변환
-  setImageUrl(exportImg);
-  puTest(exportImg); // 변환된 이미지 데이터를 puTest 함수에 전달
+  //캔버스 내용을 이미지로 변환
+  const exportImg = canvas.toDataURL();
+  //다운로드를 위한 a 태그 생성
+  const link = document.createElement('a');
+  link.href = exportImg;
+  link.download = 'avatar-image.png';
+  link.click();
 });
+
+//버튼 이벤트 리스너들
+uploadImageButton.addEventListener('click', () => {
+  const exportImg = canvas.toDataURL("image/png"); 
+  // 캔버스 내용을 PNG 이미지로 변환 --> 이미지의 Base64로 인코딩된 문자열을 얻음
+
+  getPresignedURL(exportImg); // 변환된 이미지 데이터를 getPresignedURL 함수에 전달
+});
+
 
 hairChangeButton.addEventListener('click', () => {
   imageObjects.forEach(function(obj) {
@@ -196,7 +207,4 @@ clothPantChangeButton.addEventListener('click', () => {
     }
   });
 });
-
-const myButton = document.getElementById('puCheck');
-myButton.addEventListener('click', putest);
 

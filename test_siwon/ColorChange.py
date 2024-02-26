@@ -2,13 +2,8 @@ from PIL import Image, ImageOps
 from itertools import product
 
 # 파일 경로 배열 (idx, Hair_{idx}.png)
-# file_paths = [f"Hair_{i}.png" for i in range(1, 10)]
 file_paths = [f"Hair_{i}" for i in range(1, 5)]
 
-
-# 적용할 색상 배열
-# colors = ["#FFF5C3", "#4E342E", "#FFC0CB", "#0000FF",
-#           "#FF0000", "#008000", "#FFFF00", "#800080"]
 colors = {
         "1" : "#FFFFFF",
         "2" : "#FF0000",
@@ -32,11 +27,6 @@ for file_path_idx, (key, value) in product(file_paths, colors.items()):
     image = Image.open(f"default/hair/{file_path_idx}.png").convert("RGBA")
     r, g, b, alpha = image.split()    
 
-    # # 이미지 크기 조정
-    # scaled_image = image.resize((250, 200))
-
-    # 회색조로 변환
-    # gray_image = ImageOps.grayscale(scaled_image)
     gray_image = ImageOps.grayscale(image)
 
     # 지정된 색상으로 색조 적용
@@ -48,9 +38,6 @@ for file_path_idx, (key, value) in product(file_paths, colors.items()):
 
     # 색상 변경된 이미지 표시
     #final_image.show()
-
-    # result/Hair_{i}_{color}.png 형식으로 저장
-    # colored_image.save(f"Hair_{file_path_idx}_{color}.png")
 
     final_image.save(f"change_color/Hair/{file_path_idx}_{key}.png")
 
