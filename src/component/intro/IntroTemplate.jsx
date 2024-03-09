@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import MenuBar from '../common/MenuBar.jsx';
 import AlertBar from '../common/Alert.jsx';
@@ -8,15 +8,42 @@ import logoRoot from '../resource/unisphere_logo.png';
 import handiconRoot from '../resource/unisphere_logo_hand.png';
 
 function IntroTemplate() {
-    return (
-      <HomepagePosition>
-        <MenuBar/>
-        <AlertBar/>
-        <LogoPart>
-          <img src={logoRoot} alt="logo"/>
-        </LogoPart>
-        <ButtonOne>플랫폼 소개</ButtonOne>
-        <ButtonTwo>공지사항</ButtonTwo>
+  const [showFirstpage, setShowFirstpage] = useState(true);
+  const [buttonOneZIndex, setButtonOneZIndex] = useState(2);  // 기본 버튼은 플랫폼 소개 버튼
+  const [buttonTwoZIndex, setButtonTwoZIndex] = useState(0);
+
+  return (
+    <HomepagePosition>
+      <MenuBar/>
+      <AlertBar/>
+      <LogoPart>
+        <img src={logoRoot} alt="logo"/>
+      </LogoPart>
+      <ButtonOne 
+        onClick={() => {
+          setShowFirstpage(true);
+          setButtonOneZIndex(2);
+          setButtonTwoZIndex(0);
+        }}
+        style={{
+          zIndex: buttonOneZIndex
+        }}
+      >
+        플랫폼 소개
+      </ButtonOne>
+      <ButtonTwo 
+        onClick={() => {
+          setShowFirstpage(false);
+          setButtonOneZIndex(0);
+          setButtonTwoZIndex(2);
+        }}
+        style={{
+          zIndex: buttonTwoZIndex
+        }}
+      >
+        공지사항
+      </ButtonTwo>
+      {showFirstpage && (
         <WhiteBox>
           <BubblePart>
             <text>
@@ -44,9 +71,15 @@ function IntroTemplate() {
             <main>청년 단체들의 교류 활성화를 촉진시키고, 국제 개발 협력에 관련한 정보들을 취합하여 한 눈에 볼 수 있게 하는 웹 플랫폼 제공.</main>
           </TextPart>
         </WhiteBox>
-      </HomepagePosition>
-    );
-  }
+      )}
+      {!showFirstpage && (
+        <WhiteBox>
+          {/* 채워야 함 */}
+        </WhiteBox>
+      )}
+    </HomepagePosition>
+  );
+}
   
   const HomepagePosition = styled.div`
       display: flex;
