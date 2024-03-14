@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import MenuBar from '../component/common/MenuBar.jsx';
 import AlertBar from '../component/common/Alert.jsx';
@@ -9,6 +9,10 @@ import koicaNeedRoot from '../component/resource/koica_need.png';
 import handIconRoot from '../component/resource/unisphere_logo_hand.png';
 
 function HomepageScreen() {
+  const [showHomepage, setShowHomepage] = useState(true);
+  const [buttonOneZIndex, setButtonOneZIndex] = useState(2);  // 기본 버튼은 홈피 버튼
+  const [buttonTwoZIndex, setButtonTwoZIndex] = useState(0);
+
   return (
     <HomepagePosition>
       <MenuBar/>
@@ -16,32 +20,61 @@ function HomepageScreen() {
       <LogoPart>
         <img src={logoRoot} width='130vw' alt="logo"/>
       </LogoPart>
-      <ButtonOne>홈피</ButtonOne>
-      <ButtonTwo>공지사항</ButtonTwo>
-      <WhiteBox>
-        <BubblePart>
-          <text>
-            KOICA 홈페이지에 <br/>
-            방문한 걸 환영해 ~
-          </text>
-          <BubbleBubble></BubbleBubble>
-        </BubblePart>
-        <Avatar 
-          name='KOICA' 
-          src={chRoot}
-          width='130vw'
-          marginLeft='8vw'
-          marginTop='22vh'
-        />
-        <TextPart>
-          <icon><img src={handIconRoot} width='30px' style={{marginRight: '10px'}}/></icon>
-          <h1>우리 단체의 목적</h1>
-          <main>개발도상국의 빈곤감소 및 삶의 질 향상, 여성, 아동, 장애인, 청소년의 인권향상, 성평등 실현, 지속가능한 발전 및 인도주의를 실현하고, 협력대상국과의 경제 협력 및 우호협력관계 증진, 국제사회의 평화와 번영에 기여함.</main>
-          <icon><img src={handIconRoot} width='30px' style={{marginRight: '10px'}}/></icon>
-          <h1>이런 사람들을 원해요! </h1>
-          <img src={koicaNeedRoot} width='500px'/>
-        </TextPart>
-      </WhiteBox>
+      <ButtonOne 
+        onClick={() => {
+          setShowHomepage(true);
+          setButtonOneZIndex(2);
+          setButtonTwoZIndex(0);
+        }}
+        style={{
+          zIndex: buttonOneZIndex
+        }}
+      >
+        홈피
+      </ButtonOne>
+      <ButtonTwo 
+        onClick={() => {
+          setShowHomepage(false);
+          setButtonOneZIndex(0);
+          setButtonTwoZIndex(2);
+        }}
+        style={{
+          zIndex: buttonTwoZIndex
+        }}
+      >
+        공지사항
+      </ButtonTwo>
+      {showHomepage && (
+        <WhiteBox>
+          <BubblePart>
+            <text>
+              KOICA 홈페이지에 <br/>
+              방문한 걸 환영해 ~
+            </text>
+            <BubbleBubble></BubbleBubble>
+          </BubblePart>
+          <Avatar 
+            name='KOICA' 
+            src={chRoot}
+            width='130vw'
+            marginLeft='8vw'
+            marginTop='22vh'
+          />
+          <TextPart>
+            <icon><img src={handIconRoot} width='30px' style={{marginRight: '10px'}}/></icon>
+            <h1>우리 단체의 목적</h1>
+            <main>개발도상국의 빈곤감소 및 삶의 질 향상, 여성, 아동, 장애인, 청소년의 인권향상, 성평등 실현, 지속가능한 발전 및 인도주의를 실현하고, 협력대상국과의 경제 협력 및 우호협력관계 증진, 국제사회의 평화와 번영에 기여함.</main>
+            <icon><img src={handIconRoot} width='30px' style={{marginRight: '10px'}}/></icon>
+            <h1>이런 사람들을 원해요! </h1>
+            <img src={koicaNeedRoot} width='500px'/>
+          </TextPart>
+        </WhiteBox>
+      )}
+      {!showHomepage && (
+        <WhiteBox>
+          {/* 채워야 함 */}
+        </WhiteBox>
+      )}
     </HomepagePosition>
   );
 }
